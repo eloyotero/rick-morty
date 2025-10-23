@@ -7,15 +7,13 @@ import { MatCardModule } from '@angular/material/card';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [
-    CharactersListComponent
-  ],
+  declarations: [CharactersListComponent],
   imports: [
     CommonModule,
     CharactersRoutingModule,
     MatTableModule,
     MatCardModule,
-    MatProgressSpinnerModule
-  ]
+    MatProgressSpinnerModule,
+  ],
 })
-export class CharactersModule { }
+export class CharactersModule {}
