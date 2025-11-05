@@ -1,0 +1,28 @@
+<mat-toolbar color="primary">
+  <span>Rick y Morty </span>
+</mat-toolbar>
+
+<mat-sidenav-container class="main-container">
+  <mat-sidenav mode="side" opened>
+    <mat-nav-list>
+      <a mat-list-item routerLink="/characters/list" routerLinkActive="active"
+        >Personajes</a
+      >
+      <a mat-list-item routerLink="/episodes/list" routerLinkActive="active"
+        >Episodios</a
+      >
+      <a mat-list-item routerLink="/locations/list" routerLinkActive="active"
+        >Localizaciones</a
+      >
+      <a mat-list-item routerLink="/team/list" routerLinkActive="active"
+        >Equipo</a
+      >
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>
