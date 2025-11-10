@@ -1,12 +1,14 @@
-.main-container {
-  height: 100vh;
-}
-
-.content {
-  padding: 20px;
-}
-
-.active {
+.logo {
   font-weight: bold;
-  color: #1976d2;
+  font-size: 18px;
+}
+
+.spacer {
+  flex: 1;
+}
+
+a[mat-button] {
+  color: rgb(245, 38, 38);
+  text-decoration: none;
+  margin-left: 8px;
 }

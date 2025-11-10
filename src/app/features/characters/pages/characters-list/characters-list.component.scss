@@ -1,0 +1,29 @@
+.search-box {
+  width: 100%;
+  max-width: 400px;
+  margin: 16px auto;
+  display: block;
+}
+
+.loading {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.characters-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+.character-card {
+  background-color: #1e1e1e;
+  color: #fff;
+}

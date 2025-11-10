@@ -1,3 +1,18 @@
-<h2>Detalle de localización</h2>
-<p>Aquí se mostrará la información detallada de una localización.</p>
-<a routerLink="/locations/list">Volver al listado</a>
+<div *ngIf="loading" class="spinner-container">
+  <mat-spinner></mat-spinner>
+</div>
+
+<div *ngIf="!loading && location" class="location-detail">
+  <mat-card>
+    <mat-card-title>{{ location.name }}</mat-card-title>
+    <mat-card-subtitle
+      >{{ location.type }} — {{ location.dimension }}</mat-card-subtitle
+    >
+    <mat-card-content>
+      <p><strong>Residentes:</strong> {{ location.residents.length }}</p>
+      <ul>
+        <li *ngFor="let resident of location.residents">{{ resident }}</li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>

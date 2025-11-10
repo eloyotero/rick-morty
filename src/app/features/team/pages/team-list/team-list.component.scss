@@ -1,0 +1,15 @@
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.team-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.team-card:hover {
+  transform: scale(1.02);
+}

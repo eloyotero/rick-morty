@@ -1,12 +1,26 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { CharactersService, Character } from '../../characters.service';
 
 @Component({
   selector: 'app-character-detail',
-  standalone: true,
-  imports: [],
   templateUrl: './character-detail.component.html',
-  styleUrl: './character-detail.component.scss'
+  styleUrls: ['./character-detail.component.scss'],
 })
-export class CharacterDetailComponent {
+export class CharacterDetailComponent implements OnInit {
+  character: Character | null = null;
 
+  constructor(
+    private route: ActivatedRoute,
+    private charactersService: CharactersService
+  ) {}
+
+  ngOnInit(): void {
+    const id = this.route.snapshot.paramMap.get('id');
+    if (id) {
+      this.charactersService.getCharacterById(+id).subscribe({
+        next: (data) => (this.character = data),
+      });
+    }
+  }
 }

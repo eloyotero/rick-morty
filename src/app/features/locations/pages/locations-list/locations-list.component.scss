@@ -1,0 +1,21 @@
+.spinner-container {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
+
+.locations-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 16px;
+  padding: 16px;
+}
+
+.location-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.location-card:hover {
+  transform: scale(1.02);
+}
