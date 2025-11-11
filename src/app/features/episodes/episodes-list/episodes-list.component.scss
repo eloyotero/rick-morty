@@ -1,0 +1,31 @@
+.episodes-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+  padding: 32px;
+}
+
+.episode-card {
+  padding-bottom: 16px;
+}
+
+.character-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.character-list li {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+  cursor: pointer;
+}
+
+.character-list img {
+  width: 40px;
+  height: 40px;
+  border-radius: 4px;
+  object-fit: cover;
+}

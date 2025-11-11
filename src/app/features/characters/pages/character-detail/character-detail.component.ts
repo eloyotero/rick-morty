@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { CharactersService, Character } from '../../characters.service';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-character-detail',
@@ -8,19 +8,16 @@ import { CharactersService, Character } from '../../characters.service';
   styleUrls: ['./character-detail.component.scss'],
 })
 export class CharacterDetailComponent implements OnInit {
-  character: Character | null = null;
+  character: any;
 
-  constructor(
-    private route: ActivatedRoute,
-    private charactersService: CharactersService
-  ) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient) {}
 
   ngOnInit(): void {
     const id = this.route.snapshot.paramMap.get('id');
-    if (id) {
-      this.charactersService.getCharacterById(+id).subscribe({
-        next: (data) => (this.character = data),
+    this.http
+      .get(`https://rickandmortyapi.com/api/character/${id}`)
+      .subscribe((data) => {
+        this.character = data;
       });
-    }
   }
 }

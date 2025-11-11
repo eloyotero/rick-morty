@@ -1,3 +1,19 @@
-<h2>Detalle del personaje</h2>
-<p>Aquí se mostrará la información detallada de un personaje.</p>
-<a routerLink="/characters/list">Volver al listado</a>
+<mat-toolbar color="primary">
+  <span>{{ character?.name }}</span>
+</mat-toolbar>
+
+<div class="character-detail-container" *ngIf="character">
+  <mat-card>
+    <img mat-card-image [src]="character.image" alt="{{ character.name }}" />
+    <mat-card-header>
+      <mat-card-title>{{ character.name }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ character.species }} | {{ character.status }}</mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-card-content>
+      <p>Origen: {{ character.origin?.name }}</p>
+      <p>Ubicación: {{ character.location?.name }}</p>
+    </mat-card-content>
+  </mat-card>
+</div>

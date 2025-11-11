@@ -1,0 +1,38 @@
+<mat-toolbar color="accent">
+  <span>{{ episode?.name }}</span>
+</mat-toolbar>
+
+<div class="episode-detail-container" *ngIf="!loading && episode">
+  <mat-card>
+    <img
+      mat-card-image
+      [src]="'assets/episodes/' + episode.id + '.jpg'"
+      alt="{{ episode.name }}"
+    />
+
+    <mat-card-header>
+      <mat-card-title>{{ episode.name }}</mat-card-title>
+      <mat-card-subtitle
+        >{{ episode.episode }} | {{ episode.air_date }}</mat-card-subtitle
+      >
+    </mat-card-header>
+
+    <mat-card-content>
+      <h3>Personajes:</h3>
+      <ul class="character-list">
+        <li
+          *ngFor="let character of characters"
+          [routerLink]="['/characters', character.id]"
+        >
+          <img [src]="character.image" alt="{{ character.name }}" />
+          <span>{{ character.name }}</span>
+        </li>
+      </ul>
+    </mat-card-content>
+  </mat-card>
+</div>
+
+<mat-progress-spinner
+  *ngIf="loading"
+  mode="indeterminate"
+></mat-progress-spinner>

@@ -1,25 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { CharactersListComponent } from './pages/characters-list/characters-list.component';
-import { CharacterDetailComponent } from './pages/character-detail/character-detail.component';
 import { CharactersRoutingModule } from './characters-routing.module';
-import { FormsModule } from '@angular/forms';
+import { CharacterDetailComponent } from './pages/character-detail/character-detail.component';
 
 // Angular Material
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatCardModule } from '@angular/material/card';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 @NgModule({
-  declarations: [CharactersListComponent, CharacterDetailComponent], 
+  declarations: [CharacterDetailComponent],
   imports: [
     CommonModule,
     CharactersRoutingModule,
-    FormsModule,
+    MatToolbarModule,
     MatCardModule,
-    MatFormFieldModule,
-    MatInputModule,
     MatProgressSpinnerModule,
   ],
 })
