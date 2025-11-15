@@ -1,5 +1,5 @@
 import { Routes } from '@angular/router';
-import { EpisodesListComponent } from './features/episodes/pages/episodes-list/episodes-list.component';
+import { EpisodesListComponent } from './app/features/episodes/pages/episodes-list/episodes-list.component';
 
 export const routes: Routes = [
   {
