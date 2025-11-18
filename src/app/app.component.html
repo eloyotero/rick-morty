@@ -1,9 +1,17 @@
-<mat-toolbar color="primary">
-  <span class="logo">Rick & Morty App</span>
-  <span class="spacer"></span>
-  <a mat-button routerLink="/">Episodios</a>
-  <a mat-button routerLink="/locations">Ubicaciones</a>
-  <a mat-button routerLink="/team">Team</a>
-</mat-toolbar>
+<!-- src/app/app.component.html -->
+<header class="custom-header">
+  <h1>Rick & Morty App</h1>
+  <nav>
+    <a routerLink="/characters" routerLinkActive="active">Characters</a>
+    <a routerLink="/episodes" routerLinkActive="active">Episodes</a>
+    <a routerLink="/locations" routerLinkActive="active">Locations</a>
+  </nav>
+</header>
 
-<router-outlet></router-outlet>
+<main>
+  <router-outlet></router-outlet>
+</main>
+
+<footer class="custom-footer">
+  <p>© 2025 Rick & Morty Fan Project</p>
+</footer>

@@ -1,19 +1,23 @@
-<div *ngIf="loading" class="spinner-container">
-  <mat-spinner></mat-spinner>
-</div>
+<!-- src/app/features/locations/pages/locations-list/locations-list.component.html -->
+<section class="locations-page">
+  <header class="section-header">
+    <h2>Localizaciones</h2>
+    <p>Explora dimensiones, planetas y lugares emblemáticos.</p>
+  </header>
 
-<div *ngIf="!loading" class="locations-grid">
-  <mat-card
-    *ngFor="let location of locations"
-    class="location-card"
-    [routerLink]="[location.id]"
-  >
-    <mat-card-title>{{ location.name }}</mat-card-title>
-    <mat-card-subtitle
-      >{{ location.type }} — {{ location.dimension }}</mat-card-subtitle
+  <app-loader *ngIf="loading"></app-loader>
+
+  <div class="grid" *ngIf="!loading">
+    <a
+      class="card"
+      *ngFor="let l of locations"
+      [routerLink]="['/locations', l.id]"
     >
-    <mat-card-content>
-      <p>Residentes: {{ location.residents.length }}</p>
-    </mat-card-content>
-  </mat-card>
-</div>
+      <div class="content">
+        <h3>{{ l.name }}</h3>
+        <p><strong>Tipo:</strong> {{ l.type }}</p>
+        <p><strong>Dimensión:</strong> {{ l.dimension }}</p>
+      </div>
+    </a>
+  </div>
+</section>

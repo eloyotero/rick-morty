@@ -1,33 +1,13 @@
-import { Component, OnInit } from '@angular/core';
-import { CharactersService, Character } from '../../characters.service';
+import { Component } from '@angular/core';
+import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
+import { LoaderComponent } from '../../../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-characters-list',
+  standalone: true,
+  imports: [CommonModule, RouterLink, LoaderComponent],
   templateUrl: './characters-list.component.html',
   styleUrls: ['./characters-list.component.scss'],
 })
-export class CharactersListComponent implements OnInit {
-  characters: Character[] = [];
-  searchTerm: string = '';
-  loading = true;
-
-  constructor(private charactersService: CharactersService) {}
-
-  ngOnInit(): void {
-    this.charactersService.getCharacters().subscribe({
-      next: (response) => {
-        this.characters = response.results;
-        this.loading = false;
-      },
-      error: () => {
-        this.loading = false;
-      },
-    });
-  }
-
-  get filteredCharacters(): Character[] {
-    return this.characters.filter((character) =>
-      character.name.toLowerCase().includes(this.searchTerm.toLowerCase())
-    );
-  }
-}
+export class CharactersListComponent {}

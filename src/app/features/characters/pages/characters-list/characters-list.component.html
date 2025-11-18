@@ -1,1 +1,29 @@
-<p>Componente funcionando.</p>
+<!-- src/app/features/characters/pages/characters-list/characters-list.component.html -->
+<section class="characters-page">
+  <header class="section-header">
+    <h2>Personajes</h2>
+    <p>Explora los personajes del multiverso de Rick & Morty.</p>
+  </header>
+
+  <app-loader *ngIf="loading"></app-loader>
+
+  <div class="cards-grid" *ngIf="!loading">
+    <a
+      class="card"
+      *ngFor="let c of characters"
+      [routerLink]="['/characters', c.id]"
+    >
+      <img [src]="c.image" [alt]="c.name" />
+      <div class="content">
+        <h3>{{ c.name }}</h3>
+        <p>
+          <strong>Estado:</strong> {{ c.status }} · <strong>Especie:</strong>
+          {{ c.species }}
+        </p>
+        <p><strong>Ubicación:</strong> {{ c.location?.name }}</p>
+      </div>
+    </a>
+  </div>
+
+  <!-- Puedes añadir paginación luego -->
+</section>

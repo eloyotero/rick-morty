@@ -1,31 +1,76 @@
-.episodes-container {
+.episodes-page {
+  padding: 2rem;
+  background-color: #1e1e2f;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 2rem;
+
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+
+  p {
+    font-size: 1rem;
+    color: #ccc;
+  }
+}
+
+.episodes-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-  gap: 24px;
-  padding: 32px;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 2rem;
+  justify-content: center;
 }
 
 .episode-card {
-  padding-bottom: 16px;
+  background-color: #2c2c3e;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
+
+  &:hover {
+    transform: scale(1.03);
+  }
+
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  .card-content {
+    padding: 1rem;
+
+    h3 {
+      margin-top: 0;
+      color: #ff9800;
+    }
+
+    p {
+      margin: 0.5rem 0;
+      font-size: 0.9rem;
+    }
+  }
 }
 
-.character-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.character-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-  cursor: pointer;
-}
-
-.character-list img {
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ff9800;
+  border-radius: 50%;
   width: 40px;
   height: 40px;
-  border-radius: 4px;
-  object-fit: cover;
+  margin: 2rem auto;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }

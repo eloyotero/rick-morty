@@ -1,0 +1,39 @@
+/* src/app/features/characters/pages/character-detail/character-detail.component.scss */
+.detail-page {
+  padding: 2rem;
+  background: #1e1e2f;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
+
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #ff9800;
+  text-decoration: none;
+}
+
+.detail {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  background: #2c2c3e;
+  border-radius: 10px;
+  padding: 1rem;
+
+  img {
+    width: 100%;
+    border-radius: 8px;
+    object-fit: cover;
+  }
+
+  .info {
+    h2 {
+      margin-top: 0;
+      color: #e91e63;
+    }
+    p {
+      margin: 0.4rem 0;
+    }
+  }
+}

@@ -1,19 +1,18 @@
-<mat-toolbar color="primary">
-  <span>{{ character?.name }}</span>
-</mat-toolbar>
+<!-- src/app/features/characters/pages/character-detail/character-detail.component.html -->
+<section class="detail-page" *ngIf="!loading && character">
+  <a routerLink="/characters" class="back">← Volver</a>
 
-<div class="character-detail-container" *ngIf="character">
-  <mat-card>
-    <img mat-card-image [src]="character.image" alt="{{ character.name }}" />
-    <mat-card-header>
-      <mat-card-title>{{ character.name }}</mat-card-title>
-      <mat-card-subtitle
-        >{{ character.species }} | {{ character.status }}</mat-card-subtitle
-      >
-    </mat-card-header>
-    <mat-card-content>
-      <p>Origen: {{ character.origin?.name }}</p>
-      <p>Ubicación: {{ character.location?.name }}</p>
-    </mat-card-content>
-  </mat-card>
-</div>
+  <div class="detail">
+    <img [src]="character.image" [alt]="character.name" />
+    <div class="info">
+      <h2>{{ character.name }}</h2>
+      <p><strong>Estado:</strong> {{ character.status }}</p>
+      <p><strong>Especie:</strong> {{ character.species }}</p>
+      <p><strong>Género:</strong> {{ character.gender }}</p>
+      <p><strong>Origen:</strong> {{ character.origin?.name }}</p>
+      <p><strong>Ubicación:</strong> {{ character.location?.name }}</p>
+    </div>
+  </div>
+</section>
+
+<app-loader *ngIf="loading"></app-loader>

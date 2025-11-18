@@ -1,8 +1,28 @@
-.location-detail {
-  padding: 32px;
+/* src/app/features/locations/pages/location-detail/location-detail.component.scss */
+.detail-page {
+  padding: 2rem;
+  background: #1e1e2f;
+  color: #f0f0f0;
+  min-height: 100vh;
+}
 
-  mat-card {
-    max-width: 600px;
-    margin: auto;
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #4fc3f7;
+  text-decoration: none;
+}
+
+.detail {
+  background: #2c2c3e;
+  border-radius: 10px;
+  padding: 1rem;
+
+  h2 {
+    margin-top: 0;
+    color: #4fc3f7;
+  }
+  p {
+    margin: 0.4rem 0;
   }
 }

@@ -1,14 +1,19 @@
+// src/app/features/locations/pages/location-detail/location-detail.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
 import { LocationsService, Location } from '../../locations.service';
+import { LoaderComponent } from '../../../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-location-detail',
+  standalone: true,
+  imports: [CommonModule, RouterLink, LoaderComponent],
   templateUrl: './location-detail.component.html',
   styleUrls: ['./location-detail.component.scss'],
 })
 export class LocationDetailComponent implements OnInit {
-  location: Location | null = null;
+  location?: Location;
   loading = true;
 
   constructor(
@@ -19,11 +24,12 @@ export class LocationDetailComponent implements OnInit {
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.locationsService.getLocation(id).subscribe({
-      next: (location: Location) => {
-        this.location = location;
+      next: (l) => {
+        this.location = l;
         this.loading = false;
       },
-      error: () => {
+      error: (err) => {
+        console.error('Error cargando localización', err);
         this.loading = false;
       },
     });

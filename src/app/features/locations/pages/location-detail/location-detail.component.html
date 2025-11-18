@@ -1,18 +1,13 @@
-<div *ngIf="loading" class="spinner-container">
-  <mat-spinner></mat-spinner>
-</div>
+<!-- src/app/features/locations/pages/location-detail/location-detail.component.html -->
+<section class="detail-page" *ngIf="!loading && location">
+  <a routerLink="/locations" class="back">← Volver</a>
+  <div class="detail">
+    <div class="info">
+      <h2>{{ location.name }}</h2>
+      <p><strong>Tipo:</strong> {{ location.type }}</p>
+      <p><strong>Dimensión:</strong> {{ location.dimension }}</p>
+    </div>
+  </div>
+</section>
 
-<div *ngIf="!loading && location" class="location-detail">
-  <mat-card>
-    <mat-card-title>{{ location.name }}</mat-card-title>
-    <mat-card-subtitle
-      >{{ location.type }} — {{ location.dimension }}</mat-card-subtitle
-    >
-    <mat-card-content>
-      <p><strong>Residentes:</strong> {{ location.residents.length }}</p>
-      <ul>
-        <li *ngFor="let resident of location.residents">{{ resident }}</li>
-      </ul>
-    </mat-card-content>
-  </mat-card>
-</div>
+<app-loader *ngIf="loading"></app-loader>
