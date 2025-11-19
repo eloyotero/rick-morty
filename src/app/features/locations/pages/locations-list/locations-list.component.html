@@ -2,22 +2,19 @@
 <section class="locations-page">
   <header class="section-header">
     <h2>Localizaciones</h2>
-    <p>Explora dimensiones, planetas y lugares emblemáticos.</p>
   </header>
 
-  <app-loader *ngIf="loading"></app-loader>
+  <div *ngIf="loading" class="loader"></div>
 
-  <div class="grid" *ngIf="!loading">
+  <div class="locations-grid" *ngIf="!loading">
     <a
-      class="card"
+      class="location-card"
       *ngFor="let l of locations"
       [routerLink]="['/locations', l.id]"
     >
-      <div class="content">
-        <h3>{{ l.name }}</h3>
-        <p><strong>Tipo:</strong> {{ l.type }}</p>
-        <p><strong>Dimensión:</strong> {{ l.dimension }}</p>
-      </div>
+      <h3>{{ l.name }}</h3>
+      <p><strong>Tipo:</strong> {{ l.type }}</p>
+      <p><strong>Dimensión:</strong> {{ l.dimension }}</p>
     </a>
   </div>
 </section>

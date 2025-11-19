@@ -1,13 +1,12 @@
 <!-- src/app/features/locations/pages/location-detail/location-detail.component.html -->
 <section class="detail-page" *ngIf="!loading && location">
   <a routerLink="/locations" class="back">← Volver</a>
+
   <div class="detail">
-    <div class="info">
-      <h2>{{ location.name }}</h2>
-      <p><strong>Tipo:</strong> {{ location.type }}</p>
-      <p><strong>Dimensión:</strong> {{ location.dimension }}</p>
-    </div>
+    <h2>{{ location.name }}</h2>
+    <p><strong>Tipo:</strong> {{ location.type }}</p>
+    <p><strong>Dimensión:</strong> {{ location.dimension }}</p>
   </div>
 </section>
 
-<app-loader *ngIf="loading"></app-loader>
+<div *ngIf="loading" class="loader"></div>

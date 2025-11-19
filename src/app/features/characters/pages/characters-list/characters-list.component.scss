@@ -1,7 +1,7 @@
 /* src/app/features/characters/pages/characters-list/characters-list.component.scss */
 .characters-page {
   padding: 2rem;
-  background-color: #1e1e2f;
+  background: #1e1e2f;
   color: #f0f0f0;
   min-height: 100vh;
 }
@@ -9,14 +9,6 @@
 .section-header {
   text-align: center;
   margin-bottom: 1.5rem;
-
-  h2 {
-    font-size: 2rem;
-    margin-bottom: 0.5rem;
-  }
-  p {
-    color: #ccc;
-  }
 }
 
 .cards-grid {
@@ -47,14 +39,28 @@
 
   .content {
     padding: 0.75rem 1rem;
-
     h3 {
       margin: 0 0 0.5rem;
       color: #ff9800;
     }
     p {
-      margin: 0.25rem 0;
+      margin: 0;
       font-size: 0.95rem;
     }
+  }
+}
+
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #ff9800;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 2rem auto;
+  animation: spin 1s linear infinite;
+}
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
   }
 }

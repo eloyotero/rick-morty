@@ -3,12 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { LocationsService, Location } from '../../locations.service';
-import { LoaderComponent } from '../../../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-location-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, LoaderComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './location-detail.component.html',
   styleUrls: ['./location-detail.component.scss'],
 })
@@ -28,8 +27,7 @@ export class LocationDetailComponent implements OnInit {
         this.location = l;
         this.loading = false;
       },
-      error: (err) => {
-        console.error('Error cargando localización', err);
+      error: () => {
         this.loading = false;
       },
     });

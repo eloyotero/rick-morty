@@ -3,12 +3,11 @@ import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CharactersService, Character } from '../../characters.service';
-import { LoaderComponent } from '../../../../shared/loader/loader.component';
 
 @Component({
   selector: 'app-character-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink, LoaderComponent],
+  imports: [CommonModule, RouterLink],
   templateUrl: './character-detail.component.html',
   styleUrls: ['./character-detail.component.scss'],
 })
@@ -28,8 +27,7 @@ export class CharacterDetailComponent implements OnInit {
         this.character = c;
         this.loading = false;
       },
-      error: (err) => {
-        console.error('Error cargando personaje', err);
+      error: () => {
         this.loading = false;
       },
     });

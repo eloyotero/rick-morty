@@ -2,11 +2,9 @@
 import { Routes } from '@angular/router';
 
 export const routes: Routes = [
-  {
-    path: '',
-    redirectTo: 'characters',
-    pathMatch: 'full',
-  },
+  { path: '', redirectTo: 'characters', pathMatch: 'full' },
+
+  // Characters
   {
     path: 'characters',
     loadComponent: () =>
@@ -21,13 +19,24 @@ export const routes: Routes = [
         './features/characters/pages/character-detail/character-detail.component'
       ).then((m) => m.CharacterDetailComponent),
   },
+
+  // Episodes
   {
     path: 'episodes',
     loadComponent: () =>
-      import('./features/episodes/episodes-list/episodes-list.component').then(
-        (m) => m.EpisodesListComponent
-      ),
+      import(
+        './features/episodes/pages/episodes-list/episodes-list.component'
+      ).then((m) => m.EpisodesListComponent),
   },
+  {
+    path: 'episodes/:id',
+    loadComponent: () =>
+      import(
+        './features/episodes/pages/episode-detail/episode-detail.component'
+      ).then((m) => m.EpisodeDetailComponent),
+  },
+
+  // Locations
   {
     path: 'locations',
     loadComponent: () =>
@@ -42,8 +51,22 @@ export const routes: Routes = [
         './features/locations/pages/location-detail/location-detail.component'
       ).then((m) => m.LocationDetailComponent),
   },
+
+  // Teams
   {
-    path: '**',
-    redirectTo: 'characters',
+    path: 'teams',
+    loadComponent: () =>
+      import('./features/teams/pages/teams-list/teams-list.component').then(
+        (m) => m.TeamsListComponent
+      ),
   },
+  {
+    path: 'teams/:id',
+    loadComponent: () =>
+      import('./features/teams/team-detail/team-detail.component').then(
+        (m) => m.TeamDetailComponent
+      ),
+  },
+
+  { path: '**', redirectTo: 'characters' },
 ];

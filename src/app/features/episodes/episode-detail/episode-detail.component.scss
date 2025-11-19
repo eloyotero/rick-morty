@@ -1,31 +1,43 @@
-.episode-detail-container {
-  padding: 32px;
-  display: flex;
-  justify-content: center;
+/* src/app/features/episodes/pages/episode-detail/episode-detail.component.scss */
+.detail-page {
+  padding: 2rem;
+  background: #1e1e2f;
+  color: #f0f0f0;
+  min-height: 100vh;
 }
 
-mat-card {
-  max-width: 800px;
-  width: 100%;
+.back {
+  display: inline-block;
+  margin-bottom: 1rem;
+  color: #4fc3f7;
+  text-decoration: none;
 }
 
-.character-list {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.detail {
+  background: #2c2c3e;
+  border-radius: 10px;
+  padding: 1rem;
+
+  h2 {
+    margin-top: 0;
+    color: #4fc3f7;
+  }
+  p {
+    margin: 0.4rem 0;
+  }
 }
 
-.character-list li {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 8px;
-  cursor: pointer;
+.loader {
+  border: 6px solid #f3f3f3;
+  border-top: 6px solid #4fc3f7;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  margin: 2rem auto;
+  animation: spin 1s linear infinite;
 }
-
-.character-list img {
-  width: 48px;
-  height: 48px;
-  border-radius: 4px;
-  object-fit: cover;
+@keyframes spin {
+  100% {
+    transform: rotate(360deg);
+  }
 }

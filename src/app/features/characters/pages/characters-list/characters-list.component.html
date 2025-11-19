@@ -2,10 +2,9 @@
 <section class="characters-page">
   <header class="section-header">
     <h2>Personajes</h2>
-    <p>Explora los personajes del multiverso de Rick & Morty.</p>
   </header>
 
-  <app-loader *ngIf="loading"></app-loader>
+  <div *ngIf="loading" class="loader"></div>
 
   <div class="cards-grid" *ngIf="!loading">
     <a
@@ -16,14 +15,8 @@
       <img [src]="c.image" [alt]="c.name" />
       <div class="content">
         <h3>{{ c.name }}</h3>
-        <p>
-          <strong>Estado:</strong> {{ c.status }} · <strong>Especie:</strong>
-          {{ c.species }}
-        </p>
-        <p><strong>Ubicación:</strong> {{ c.location?.name }}</p>
+        <p>{{ c.status }} · {{ c.species }}</p>
       </div>
     </a>
   </div>
-
-  <!-- Puedes añadir paginación luego -->
 </section>

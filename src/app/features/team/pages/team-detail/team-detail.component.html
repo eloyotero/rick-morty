@@ -1,8 +1,15 @@
-<div class="team-detail">
-  <mat-card>
-    <mat-card-title>Detalles del miembro #{{ memberId }}</mat-card-title>
-    <mat-card-content>
-      <p>Aquí podrías mostrar más información personalizada del miembro.</p>
-    </mat-card-content>
-  </mat-card>
-</div>
+<!-- team-detail.component.html -->
+<section class="detail-page" *ngIf="!loading && team">
+  <a routerLink="/teams" class="back">← Volver</a>
+
+  <div class="detail">
+    <h2>{{ team.name }}</h2>
+    <p>{{ team.description }}</p>
+    <h3>Miembros:</h3>
+    <ul>
+      <li *ngFor="let m of team.members">{{ m }}</li>
+    </ul>
+  </div>
+</section>
+
+<div *ngIf="loading" class="loader"></div>

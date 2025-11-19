@@ -1,18 +1,20 @@
+<!-- src/app/features/episodes/pages/episodes-list/episodes-list.component.html -->
 <section class="episodes-page">
   <header class="section-header">
     <h2>Episodios</h2>
-    <p>Explora las aventuras de Rick y Morty.</p>
   </header>
 
   <div *ngIf="loading" class="loader"></div>
 
   <div class="episodes-grid" *ngIf="!loading">
-    <div class="episode-card" *ngFor="let episode of episodes">
-      <div class="card-content">
-        <h3>{{ episode.name }}</h3>
-        <p><strong>Fecha de emisión:</strong> {{ episode.air_date }}</p>
-        <p><strong>Código:</strong> {{ episode.episode }}</p>
-      </div>
-    </div>
+    <a
+      class="episode-card"
+      *ngFor="let e of episodes"
+      [routerLink]="['/episodes', e.id]"
+    >
+      <h3>{{ e.name }}</h3>
+      <p><strong>Fecha:</strong> {{ e.air_date }}</p>
+      <p><strong>Código:</strong> {{ e.episode }}</p>
+    </a>
   </div>
 </section>

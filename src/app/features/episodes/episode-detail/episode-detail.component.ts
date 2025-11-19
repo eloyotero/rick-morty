@@ -1,41 +1,35 @@
+// src/app/features/episodes/pages/episode-detail/episode-detail.component.ts
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { HttpClient } from '@angular/common/http';
-import { forkJoin } from 'rxjs';
+import { CommonModule } from '@angular/common';
+import { ActivatedRoute, RouterLink } from '@angular/router';
+import { EpisodesService, Episode } from '../episodes.service';
 
 @Component({
   selector: 'app-episode-detail',
+  standalone: true,
+  imports: [CommonModule, RouterLink],
   templateUrl: './episode-detail.component.html',
   styleUrls: ['./episode-detail.component.scss'],
 })
 export class EpisodeDetailComponent implements OnInit {
-  episode: any;
-  characters: { id: number; name: string; image: string }[] = [];
+  episode?: Episode;
   loading = true;
 
-  constructor(private route: ActivatedRoute, private http: HttpClient) {}
+  constructor(
+    private route: ActivatedRoute,
+    private episodesService: EpisodesService
+  ) {}
 
   ngOnInit(): void {
-    const id = this.route.snapshot.paramMap.get('id');
-
-    this.http
-      .get(`https://rickandmortyapi.com/api/episode/${id}`)
-      .subscribe((value: unknown) => {
-        const data = value as any;
-        this.episode = data;
-
-        const requests = data.characters.map((url: string) =>
-          this.http.get(url)
-        );
-        forkJoin(requests).subscribe((value: unknown) => {
-          const characters = value as any[];
-          this.characters = characters.map((c) => ({
-            id: c.id,
-            name: c.name,
-            image: c.image,
-          }));
-          this.loading = false;
-        });
-      });
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.episodesService.getEpisode(id).subscribe({
+      next: (e) => {
+        this.episode = e;
+        this.loading = false;
+      },
+      error: () => {
+        this.loading = false;
+      },
+    });
   }
 }

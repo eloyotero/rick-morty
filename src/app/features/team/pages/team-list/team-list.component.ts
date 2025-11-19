@@ -1,54 +1,27 @@
-import { Component } from '@angular/core';
+// src/app/features/teams/pages/teams-list/teams-list.component.ts
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterModule } from '@angular/router';
-
-type TeamMember = {
-  id: number;
-  name: string;
-  role: string;
-  image: string;
-  description: string;
-};
+import { RouterLink } from '@angular/router';
+import { TeamsService, Team } from '../../teams.service';
 
 @Component({
-  selector: 'app-team-list',
+  selector: 'app-teams-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './team-list.component.html',
   styleUrls: ['./team-list.component.scss'],
 })
-export class TeamListComponent {
-  loading = false;
+export class TeamsListComponent implements OnInit {
+  teams: Team[] = [];
+  loading = true;
 
-  team: TeamMember[] = [
-    {
-      id: 1,
-      name: 'Dan Harmon',
-      role: 'Creador',
-      image: 'https://via.placeholder.com/300x180?text=Dan+Harmon',
-      description:
-        'Creador de Rick and Morty, responsable de la narrativa y el tono de la serie.',
-    },
-    {
-      id: 2,
-      name: 'Justin Roiland',
-      role: 'Creador y Voz',
-      image: 'https://via.placeholder.com/300x180?text=Justin+Roiland',
-      description:
-        'Creador y voz original de Rick y Morty, con estilo irreverente y creativo.',
-    },
-    {
-      id: 3,
-      name: 'Ryan Elder',
-      role: 'Compositor',
-      image: 'https://via.placeholder.com/300x180?text=Ryan+Elder',
-      description:
-        'Compositor de la música de la serie, aporta atmósfera y ritmo a cada episodio.',
-    },
-  ];
+  constructor(private teamsService: TeamsService) {}
 
-  simulateLoading() {
-    this.loading = true;
-    setTimeout(() => (this.loading = false), 1200);
+  ngOnInit(): void {
+    // Simulamos carga con timeout
+    setTimeout(() => {
+      this.teams = this.teamsService.getTeams();
+      this.loading = false;
+    }, 500);
   }
 }

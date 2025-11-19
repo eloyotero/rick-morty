@@ -1,3 +1,4 @@
+// src/app/features/episodes/episodes.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
@@ -9,16 +10,14 @@ export interface Episode {
   episode: string;
 }
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable({ providedIn: 'root' })
 export class EpisodesService {
   private apiUrl = 'https://rickandmortyapi.com/api/episode';
 
   constructor(private http: HttpClient) {}
 
-  getEpisodes(): Observable<{ results: Episode[] }> {
-    return this.http.get<{ results: Episode[] }>(this.apiUrl);
+  getEpisodes(page = 1): Observable<{ results: Episode[] }> {
+    return this.http.get<{ results: Episode[] }>(`${this.apiUrl}?page=${page}`);
   }
 
   getEpisode(id: number): Observable<Episode> {
