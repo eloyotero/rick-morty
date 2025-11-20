@@ -1,48 +1,54 @@
-import { Component, OnInit, signal, computed } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { RouterModule } from '@angular/router';
-import { EpisodesService, EpisodeAggregate } from '../episodes.service';
+
+interface Episode {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+}
 
 @Component({
   selector: 'app-episodes-list',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, HttpClientModule, RouterModule],
   templateUrl: './episodes-list.component.html',
   styleUrls: ['./episodes-list.component.scss']
 })
 export class EpisodesListComponent implements OnInit {
+  episodes: Episode[] = [];
   loading = true;
-  episodes = signal<EpisodeAggregate[]>([]);
-  page = signal<number>(1);
-  readonly PAGE_SIZE = 10;
+  page = 1;
+  pageSize = 6;
 
-  totalItems = computed(() => this.episodes().length);
-  totalPages = computed(() => Math.max(1, Math.ceil(this.totalItems() / this.PAGE_SIZE)));
-  pageItems = computed(() => {
-    const start = (this.page() - 1) * this.PAGE_SIZE;
-    return this.episodes().slice(start, start + this.PAGE_SIZE);
-  });
-
-  constructor(private episodesService: EpisodesService) {}
-
-  ngOnInit(): void {
-    this.episodesService.getAggregatedSeason1().subscribe({
-      next: (data: EpisodeAggregate[]) => {
-        this.episodes.set(data);
+  ngOnInit() {
+    fetch('assets/episodes.json')
+      .then(res => res.json())
+      .then(data => {
+        this.episodes = data.results || data;
         this.loading = false;
-      },
-      error: (_err: unknown) => { this.loading = false; }
-    });
+      });
   }
 
-  onImgError(event: Event, type: 'episode' | 'character' | 'team' | 'location') {
-    const img = event.target as HTMLImageElement | null;
-    if (!img) return;
-    const fallback =
-      type === 'episode'   ? 'assets/images/episodes/placeholder.png' :
-      type === 'character' ? 'assets/images/characters/placeholder.png' :
-      type === 'team'      ? 'assets/images/teams/placeholder.png' :
-                             'assets/images/locations/placeholder.png';
-    img.src = fallback;
+  get totalPages(): number {
+    return Math.ceil(this.episodes.length / this.pageSize);
   }
+
+  get totalItems(): number {
+    return this.episodes.length;
+  }
+
+  get labelPlural(): string {
+    return 'episodios';
+  }
+
+  pageItems(): Episode[] {
+    const start = (this.page - 1) * this.pageSize;
+    return this.episodes.slice(start, start + this.pageSize);
+  }
+
+  prevPage() { if (this.page > 1) this.page--; }
+  nextPage() { if (this.page < this.totalPages) this.page++; }
 }

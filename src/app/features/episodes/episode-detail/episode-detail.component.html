@@ -1,80 +1,10 @@
-<section class="episode-detail">
-  <header class="topbar">
-    <a routerLink="/episodes" class="back">← Volver</a>
-    <h2>{{ episode()?.title }}</h2>
-  </header>
+<section class="episode-detail" *ngIf="episode">
+  <button (click)="back()" class="btn-accent">← Volver</button>
 
-  <div *ngIf="loading" class="loader">Cargando episodio…</div>
+  <h1>{{ episode.name }}</h1>
+  <p><strong>Fecha:</strong> {{ episode.air_date }}</p>
+  <p><strong>Código:</strong> {{ episode.episode }}</p>
 
-  <ng-container *ngIf="!loading && episode() as ep">
-    <div class="hero">
-      <img
-        [src]="ep.image || 'assets/images/episodes/placeholder.png'"
-        alt="Thumbnail {{ ep.code }}"
-        (error)="onImgError($event, 'episode')"
-        class="thumb"
-      />
-      <div class="meta">
-        <p><strong>Código:</strong> {{ ep.code }}</p>
-        <p><strong>Fecha:</strong> {{ ep.date || '—' }}</p>
-      </div>
-    </div>
-
-    <!-- Personajes -->
-    <section class="block characters">
-      <h3>👤 Personajes ({{ ep.characters.length }})</h3>
-      <div class="cards">
-        <article class="card" *ngFor="let ch of ep.characters">
-          <img
-            [src]="ch.image || 'assets/images/characters/placeholder.png'"
-            [alt]="ch.name"
-            (error)="onImgError($event, 'character')"
-          />
-          <div class="info">
-            <h4>{{ ch.name }}</h4>
-            <p>{{ ch.status }} · {{ ch.species }}</p>
-            <a [routerLink]="['/characters', ch.id]" class="btn-view">Ver personaje</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Equipos -->
-    <section class="block teams">
-      <h3>🛡️ Equipos ({{ ep.teams.length }})</h3>
-      <div class="cards">
-        <article class="card" *ngFor="let team of ep.teams">
-          <img
-            [src]="team.image || 'assets/images/teams/placeholder.png'"
-            [alt]="team.name"
-            (error)="onImgError($event, 'team')"
-          />
-          <div class="info">
-            <h4>{{ team.name }}</h4>
-            <p>{{ team.description }}</p>
-            <a [routerLink]="['/teams', team.id]" class="btn-view">Ver equipo</a>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <!-- Localizaciones -->
-    <section class="block locations">
-      <h3>📍 Localizaciones ({{ ep.locations.length }})</h3>
-      <div class="cards">
-        <article class="card" *ngFor="let loc of ep.locations">
-          <img
-            [src]="loc.image || 'assets/images/locations/placeholder.png'"
-            [alt]="loc.name"
-            (error)="onImgError($event, 'location')"
-          />
-          <div class="info">
-            <h4>{{ loc.name }}</h4>
-            <p>{{ loc.type }} · {{ loc.dimension }}</p>
-            <a [routerLink]="['/locations', loc.id]" class="btn-view">Ver localización</a>
-          </div>
-        </article>
-      </div>
-    </section>
-  </ng-container>
+  <h3>Personajes</h3>
+  <ul><li *ngFor="let c of episode.characters">{{ c }}</li></ul>
 </section>

@@ -1,7 +1,7 @@
 :host {
   display: block;
   min-height: 100vh;
-  background-color: #000;   // fondo negro global
+  background-color: #000;   
   color: #fff;
 }
 
@@ -30,7 +30,7 @@
   gap: 1rem;
 
   a {
-    color: #2196f3; // azul eléctrico
+    color: #2196f3; 
     text-decoration: none;
     font-weight: bold;
     padding: 0.5rem;
@@ -39,7 +39,7 @@
 
     &:hover {
       background-color: #222;
-      color: #64b5f6; // azul claro al pasar el ratón
+      color: #64b5f6; 
     }
 
     &.active {

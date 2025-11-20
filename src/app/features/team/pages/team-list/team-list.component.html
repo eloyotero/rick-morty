@@ -1,45 +1,27 @@
-<section class="teams-page">
-  <header class="section-header">
-    <h2>Equipos</h2>
-
-    <div class="pager">
-      <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
-      <span class="page-info">
-        Página {{ page() }} de {{ totalPages() }}
-        <small>({{ totalItems() }} equipos)</small>
-      </span>
-      <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
-    </div>
-  </header>
+<section class="teams-grid-page">
+  <h2>Equipos</h2>
 
   <div *ngIf="loading" class="loader">Cargando equipos…</div>
 
-  <div class="teams-grid" *ngIf="!loading">
-    <article class="team-card" *ngFor="let team of pageItems(); trackBy: trackById">
-      <div class="avatar-wrap">
-        <img
-          [src]="team.image || 'assets/images/teams/placeholder.png'"
-          [alt]="team.name"
-          loading="lazy"
-          (error)="onImageError($event)"
-          class="avatar"
-          width="92"
-          height="92"
-        />
-      </div>
-
-      <div class="team-content">
-        <h3 class="name">{{ team.name }}</h3>
-        <p><strong>Miembros:</strong> {{ team.members.length }}</p>
-        <p class="desc">{{ team.description }}</p>
-        <p><strong>Creado:</strong> {{ team.created }}</p>
-        <a [routerLink]="['/teams', team.id]" class="btn-detail">Ver detalle</a>
-      </div>
-    </article>
+  <div class="grid" *ngIf="!loading">
+    <div class="card" *ngFor="let team of pageItems()">
+      <img
+        [src]="imagePath(team.image)"
+        (error)="onImageError($event)"
+        alt="{{ team.name }}"
+      />
+      <h3>{{ team.name }}</h3>
+      <a
+        [routerLink]="['/teams', team.id]"
+        [queryParams]="{ page: page }"
+        class="btn-accent"
+      >Ver equipo</a>
+    </div>
   </div>
 
-  <footer class="footer-pager" *ngIf="!loading && totalPages() > 1">
-    <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
-    <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
-  </footer>
+  <div class="pager">
+    <button (click)="prevPage()" [disabled]="page === 1" class="btn-accent">←</button>
+    <span>Página {{ page }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="page === totalPages" class="btn-accent">→</button>
+  </div>
 </section>

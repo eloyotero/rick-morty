@@ -1,322 +1,187 @@
-
 {
-    "results": [
-      {
-        "id": 101,
-        "name": "Earth (C-137)",
-        "type": "Planet",
-        "dimension": "Dimension C-137",
-        "episode": "S01E01",
-        "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
-        "image": "assets/images/locations/earth-c137.png"
-      },
-      {
-        "id": 102,
-        "name": "Harry Herpson High School",
-        "type": "School",
-        "dimension": "Dimension C-137",
-        "episode": "S01E01",
-        "residents": ["Morty Smith", "Jessica", "Sr. Goldenfold"],
-        "image": "assets/images/locations/harry-herpson-high-school.png"
-      },
-      {
-        "id": 103,
-        "name": "Smith Family House",
-        "type": "House",
-        "dimension": "Dimension C-137",
-        "episode": "S01E01",
-        "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
-        "image": "assets/images/locations/smith-family-house.png"
-      },
-      {
-        "id": 104,
-        "name": "Dimension 35-C",
-        "type": "Parallel dimension",
-        "dimension": "Dimension 35-C",
-        "episode": "S01E01",
-        "residents": ["Megaseed Tree Creatures"],
-        "image": "assets/images/locations/dimension-35c.png"
-      },
-      {
-        "id": 105,
-        "name": "Mega-Tree Forest (35-C)",
-        "type": "Forest",
-        "dimension": "Dimension 35-C",
-        "episode": "S01E01",
-        "residents": ["Megaseed Tree Creatures"],
-        "image": "assets/images/locations/mega-tree-forest-35c.png"
-      },
-  
-      {
-        "id": 201,
-        "name": "Smith Family Bedroom",
-        "type": "Room",
-        "dimension": "Dimension C-137",
-        "episode": "S01E02",
-        "residents": ["Morty Smith", "Snuffles"],
-        "image": "assets/images/locations/smith-family-bedroom.png"
-      },
-      {
-        "id": 202,
-        "name": "Snuffles’ Dog World",
-        "type": "Alternate reality",
-        "dimension": "Unknown",
-        "episode": "S01E02",
-        "residents": ["Snuffles", "Dog Army"],
-        "image": "assets/images/locations/dog-world.png"
-      },
-      {
-        "id": 203,
-        "name": "Mrs. Pancakes’ Apartment (Dream)",
-        "type": "Dream location",
-        "dimension": "Dream realm",
-        "episode": "S01E02",
-        "residents": ["Mrs. Pancakes"],
-        "image": "assets/images/locations/mrs-pancakes-apartment-dream.png"
-      },
-      {
-        "id": 204,
-        "name": "Scary Terry’s Dreamscape",
-        "type": "Dream realm",
-        "dimension": "Dream realm",
-        "episode": "S01E02",
-        "residents": ["Scary Terry"],
-        "image": "assets/images/locations/scary-terry-dreamscape.png"
-      },
-      {
-        "id": 205,
-        "name": "Classroom Dream (Layers)",
-        "type": "Dream location",
-        "dimension": "Dream realm",
-        "episode": "S01E02",
-        "residents": ["Students (Dream)", "Mr. Goldenfold (Dream)"],
-        "image": "assets/images/locations/classroom-dream-layers.png"
-      },
-  
-      {
-        "id": 301,
-        "name": "Anatomy Park (Inside Ruben)",
-        "type": "Micro-park",
-        "dimension": "Inside body",
-        "episode": "S01E03",
-        "residents": ["Dr. Xenon Bloom", "Annie", "Park Staff"],
-        "image": "assets/images/locations/anatomy-park.png"
-      },
-      {
-        "id": 302,
-        "name": "Ruben’s Body",
-        "type": "Human body",
-        "dimension": "Inside body",
-        "episode": "S01E03",
-        "residents": ["Microbes", "Anatomy Park Staff"],
-        "image": "assets/images/locations/ruben-body.png"
-      },
-      {
-        "id": 303,
-        "name": "Pirates of the Pancreas",
-        "type": "Theme ride",
-        "dimension": "Inside body",
-        "episode": "S01E03",
-        "residents": ["Park Visitors"],
-        "image": "assets/images/locations/pirates-of-the-pancreas.png"
-      },
-      {
-        "id": 304,
-        "name": "Spleen Mountain",
-        "type": "Theme area",
-        "dimension": "Inside body",
-        "episode": "S01E03",
-        "residents": ["Park Visitors"],
-        "image": "assets/images/locations/spleen-mountain.png"
-      },
-      {
-        "id": 305,
-        "name": "Liver Lagoon",
-        "type": "Theme area",
-        "dimension": "Inside body",
-        "episode": "S01E03",
-        "residents": ["Park Visitors"],
-        "image": "assets/images/locations/liver-lagoon.png"
-      },
-      {
-        "id": 306,
-        "name": "Stomach Central",
-        "type": "Theme area",
-        "dimension": "Inside body",
-        "episode": "S01E03",
-        "residents": ["Park Visitors"],
-        "image": "assets/images/locations/stomach-central.png"
-      },
-  
-      {
-        "id": 401,
-        "name": "Zigerion Ship",
-        "type": "Alien spaceship",
-        "dimension": "Unknown",
-        "episode": "S01E04",
-        "residents": ["Zigerion Aliens", "Rick Sanchez", "Jerry Smith"],
-        "image": "assets/images/locations/zigerion-ship.png"
-      },
-      {
-        "id": 402,
-        "name": "Simulation Layer (Earth replica)",
-        "type": "Simulation",
-        "dimension": "Zigerion ship",
-        "episode": "S01E04",
-        "residents": ["Simulation NPCs", "Rick Sanchez", "Jerry Smith"],
-        "image": "assets/images/locations/simulation-layer-earth.png"
-      },
-      {
-        "id": 403,
-        "name": "Rick’s Garage (Simulated)",
-        "type": "Garage (simulation)",
-        "dimension": "Zigerion ship",
-        "episode": "S01E04",
-        "residents": ["Simulation NPCs", "Rick Sanchez"],
-        "image": "assets/images/locations/ricks-garage-simulated.png"
-      },
-      {
-        "id": 404,
-        "name": "Smith Family House (Simulated)",
-        "type": "House (simulation)",
-        "dimension": "Zigerion ship",
-        "episode": "S01E04",
-        "residents": ["Simulation NPCs", "Jerry Smith"],
-        "image": "assets/images/locations/smith-house-simulated.png"
-      },
-  
-      {
-        "id": 501,
-        "name": "Meeseeks Box",
-        "type": "Device",
-        "dimension": "Dimension C-137",
-        "episode": "S01E05",
-        "residents": ["Mr. Meeseeks"],
-        "image": "assets/images/locations/meeseeks-box.png"
-      },
-      {
-        "id": 502,
-        "name": "Golf Course",
-        "type": "Outdoor",
-        "dimension": "Dimension C-137",
-        "episode": "S01E05",
-        "residents": ["Old Man Mr. Meeseeks", "Jerry Smith"],
-        "image": "assets/images/locations/golf-course.png"
-      },
-  
-      {
-        "id": 601,
-        "name": "Cronenberg Earth",
-        "type": "Planet",
-        "dimension": "Cronenberg Dimension",
-        "episode": "S01E06",
-        "residents": ["Cronenberg Rick", "Cronenberg Morty"],
-        "image": "assets/images/locations/cronenberg-earth.png"
-      },
-      {
-        "id": 602,
-        "name": "Harry Herpson High School (Potion)",
-        "type": "School",
-        "dimension": "Dimension C-137",
-        "episode": "S01E06",
-        "residents": ["Coach Feratu"],
-        "image": "assets/images/locations/harry-herpson-potion.png"
-      },
-  
-      {
-        "id": 701,
-        "name": "Gazorpazorp (female city)",
-        "type": "City",
-        "dimension": "Gazorpazorp",
-        "episode": "S01E07",
-        "residents": ["Ma-Sha"],
-        "image": "assets/images/locations/gazorpazorp-female-city.png"
-      },
-      {
-        "id": 702,
-        "name": "Pawn Shop (Earth)",
-        "type": "Shop",
-        "dimension": "Dimension C-137",
-        "episode": "S01E07",
-        "residents": ["Gwendolyn"],
-        "image": "assets/images/locations/pawn-shop-earth.png"
-      },
-  
-      {
-        "id": 801,
-        "name": "Smith Family House (TV)",
-        "type": "House",
-        "dimension": "Dimension C-137",
-        "episode": "S01E08",
-        "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
-        "image": "assets/images/locations/smith-family-house-tv.png"
-      },
-      {
-        "id": 802,
-        "name": "Alternate TV Network",
-        "type": "Broadcast",
-        "dimension": "Unknown",
-        "episode": "S01E08",
-        "residents": ["Ants-in-My-Eyes Johnson"],
-        "image": "assets/images/locations/alternate-tv-network.png"
-      },
-  
-      {
-        "id": 901,
-        "name": "Needful Things",
-        "type": "Shop",
-        "dimension": "Dimension C-137",
-        "episode": "S01E09",
-        "residents": ["Mr. Needful", "Summer Smith", "Rick Sanchez"],
-        "image": "assets/images/locations/needful-things.png"
-      },
-      {
-        "id": 902,
-        "name": "Computer Lab (Needful)",
-        "type": "Lab",
-        "dimension": "Dimension C-137",
-        "episode": "S01E09",
-        "residents": ["Rick Sanchez"],
-        "image": "assets/images/locations/computer-lab-needful.png"
-      },
-  
-      {
-        "id": 1001,
-        "name": "Citadel of Ricks",
-        "type": "Space station",
-        "dimension": "Unknown",
-        "episode": "S01E10",
-        "residents": ["Council of Ricks", "Evil Rick", "Evil Morty", "Doofus Rick", "Mortys"],
-        "image": "assets/images/locations/citadel-of-ricks.png"
-      },
-      {
-        "id": 1002,
-        "name": "Rick Cell Block",
-        "type": "Prison",
-        "dimension": "Citadel",
-        "episode": "S01E10",
-        "residents": ["Ricks", "Mortys"],
-        "image": "assets/images/locations/rick-cell-block.png"
-      },
-  
-      {
-        "id": 1101,
-        "name": "Smith Family House (Party)",
-        "type": "House",
-        "dimension": "Dimension C-137",
-        "episode": "S01E11",
-        "residents": ["Birdperson", "Squanchy", "Abradolf Lincler", "Gearhead", "Rick", "Morty", "Summer"],
-        "image": "assets/images/locations/smith-family-house-party.png"
-      },
-      {
-        "id": 1102,
-        "name": "Party Void (Freezer portal)",
-        "type": "Portal area",
-        "dimension": "Unknown",
-        "episode": "S01E11",
-        "residents": ["Party guests"],
-        "image": "assets/images/locations/party-void-freezer-portal.png"
-      }
-    ]
-  }
-  
+  "results": [
+    {
+      "id": 101,
+      "name": "Earth (C-137)",
+      "type": "Planet",
+      "dimension": "Dimension C-137",
+      "episode": "S01E01",
+      "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
+      "image": "earth-c137.png"
+    },
+    {
+      "id": 102,
+      "name": "Harry Herpson High School",
+      "type": "School",
+      "dimension": "Dimension C-137",
+      "episode": "S01E01",
+      "residents": ["Morty Smith", "Jessica", "Sr. Goldenfold"],
+      "image": "harry-herpson-high-school.png"
+    },
+    {
+      "id": 103,
+      "name": "Smith Family House",
+      "type": "House",
+      "dimension": "Dimension C-137",
+      "episode": "S01E01",
+      "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
+      "image": "smith-family-house.png"
+    },
+    {
+      "id": 104,
+      "name": "Dimension 35-C",
+      "type": "Parallel dimension",
+      "dimension": "Dimension 35-C",
+      "episode": "S01E01",
+      "residents": ["Megaseed Tree Creatures"],
+      "image": "dimension-35c.png"
+    },
+    {
+      "id": 105,
+      "name": "Mega-Tree Forest (35-C)",
+      "type": "Forest",
+      "dimension": "Dimension 35-C",
+      "episode": "S01E01",
+      "residents": ["Megaseed Tree Creatures"],
+      "image": "mega-tree-forest-35c.png"
+    },
+
+    {
+      "id": 201,
+      "name": "Smith Family Bedroom",
+      "type": "Room",
+      "dimension": "Dimension C-137",
+      "episode": "S01E02",
+      "residents": ["Morty Smith", "Snuffles"],
+      "image": "smith-family-bedroom.png"
+    },
+    {
+      "id": 202,
+      "name": "Snuffles’ Dog World",
+      "type": "Alternate reality",
+      "dimension": "Unknown",
+      "episode": "S01E02",
+      "residents": ["Snuffles", "Dog Army"],
+      "image": "snuffles-dog-world.png"
+    },
+    {
+      "id": 203,
+      "name": "Mrs. Pancakes’ Apartment (Dream)",
+      "type": "Dream location",
+      "dimension": "Dream realm",
+      "episode": "S01E02",
+      "residents": ["Mrs. Pancakes"],
+      "image": "mrs-pancakes-apartment-dream.png"
+    },
+    {
+      "id": 204,
+      "name": "Scary Terry’s Dreamscape",
+      "type": "Dream realm",
+      "dimension": "Dream realm",
+      "episode": "S01E02",
+      "residents": ["Scary Terry"],
+      "image": "scary-terry-dreamscape.png"
+    },
+    {
+      "id": 205,
+      "name": "Classroom Dream (Layers)",
+      "type": "Dream location",
+      "dimension": "Dream realm",
+      "episode": "S01E02",
+      "residents": ["Students (Dream)", "Mr. Goldenfold (Dream)"],
+      "image": "classroom-dream-layers.png"
+    },
+
+    {
+      "id": 301,
+      "name": "Anatomy Park (Inside Ruben)",
+      "type": "Micro-park",
+      "dimension": "Inside body",
+      "episode": "S01E03",
+      "residents": ["Dr. Xenon Bloom", "Annie", "Park Staff"],
+      "image": "anatomy-park-inside-ruben.png"
+    },
+    {
+      "id": 302,
+      "name": "Ruben’s Body",
+      "type": "Human body",
+      "dimension": "Inside body",
+      "episode": "S01E03",
+      "residents": ["Microbes", "Anatomy Park Staff"],
+      "image": "rubens-body.png"
+    },
+    {
+      "id": 303,
+      "name": "Pirates of the Pancreas",
+      "type": "Theme ride",
+      "dimension": "Inside body",
+      "episode": "S01E03",
+      "residents": ["Park Visitors"],
+      "image": "pirates-of-the-pancreas.png"
+    },
+    {
+      "id": 304,
+      "name": "Spleen Mountain",
+      "type": "Theme area",
+      "dimension": "Inside body",
+      "episode": "S01E03",
+      "residents": ["Park Visitors"],
+      "image": "spleen-mountain.png"
+    },
+    {
+      "id": 305,
+      "name": "Liver Lagoon",
+      "type": "Theme area",
+      "dimension": "Inside body",
+      "episode": "S01E03",
+      "residents": ["Park Visitors"],
+      "image": "liver-lagoon.png"
+    },
+    {
+      "id": 306,
+      "name": "Stomach Central",
+      "type": "Theme area",
+      "dimension": "Inside body",
+      "episode": "S01E03",
+      "residents": ["Park Visitors"],
+      "image": "stomach-central.png"
+    },
+
+    {
+      "id": 401,
+      "name": "Zigerion Ship",
+      "type": "Alien spaceship",
+      "dimension": "Unknown",
+      "episode": "S01E04",
+      "residents": ["Zigerion Aliens", "Rick Sanchez", "Jerry Smith"],
+      "image": "zigerion-ship.png"
+    },
+    {
+      "id": 402,
+      "name": "Simulation Layer (Earth replica)",
+      "type": "Simulation",
+      "dimension": "Zigerion ship",
+      "episode": "S01E04",
+      "residents": ["Simulation NPCs", "Rick Sanchez", "Jerry Smith"],
+      "image": "simulation-layer-earth-replica.png"
+    },
+    {
+      "id": 403,
+      "name": "Rick’s Garage (Simulated)",
+      "type": "Garage (simulation)",
+      "dimension": "Zigerion ship",
+      "episode": "S01E04",
+      "residents": ["Simulation NPCs", "Rick Sanchez"],
+      "image": "ricks-garage-simulated.png"
+    },
+    {
+      "id": 404,
+      "name": "Smith Family House (Simulated)",
+      "type": "House (simulation)",
+      "dimension": "Zigerion ship",
+      "episode": "S01E04",
+      "residents": ["Simulation NPCs", "Jerry Smith"],
+      "image": "smith-family-house-simulated.png"
+    }
+  ]
+}

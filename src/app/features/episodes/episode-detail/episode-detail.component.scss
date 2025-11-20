@@ -1,124 +1,45 @@
-:host, .episode-detail {
-  background: #0f0f10;
-  color: #eee;
-  min-height: 100vh;
-  display: block;
-  padding-bottom: 2rem;
+.episode-detail {
+  padding: 20px;
+  background: #0a0a0a;
+  color: #e6eef6;
+  font-family: Inter, sans-serif;
+  max-width: 800px;
+  margin: 0 auto;
+
+  h1 {
+    margin: 0 0 8px;
+    font-size: 1.6rem;
+  }
+
+  p {
+    margin: 6px 0;
+  }
+
+  ul {
+    margin: 8px 0 0 18px;
+  }
 }
 
-/* Barra superior */
-.topbar {
-  display: flex;
-  align-items: center;
-  gap: 1rem;
-  padding: 1rem 2rem;
-  border-bottom: 1px solid #222;
-}
-
-.back {
-  color: #90caf9;
-  text-decoration: none;
-}
-
-.back:hover {
-  text-decoration: underline;
-}
-
-/* Hero con imagen y metadatos */
-.hero {
-  display: grid;
-  grid-template-columns: 160px 1fr;
-  gap: 1rem;
-  align-items: center;
-  padding: 1.25rem 2rem;
-}
-
-.thumb {
-  width: 160px;
-  height: 100px;
-  object-fit: cover;
-  border-radius: 8px;
-  border: 1px solid #333;
-  background: #0b0b0c;
-}
-
-.meta p {
-  margin: 0.2rem 0;
-}
-
-/* Bloques de personajes, equipos y localizaciones */
-.block {
-  margin-top: 1.5rem;
-  padding: 0 2rem;
-}
-
-.block h3 {
-  font-size: 1.2rem;
-  margin-bottom: 0.8rem;
-  color: #cbd5e1;
-  border-bottom: 1px solid #333;
-  padding-bottom: 0.4rem;
-}
-
-/* Grid de tarjetas */
-.cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1rem;
-}
-
-/* Tarjeta individual */
-.card {
-  background: #1a1a1c;
-  border: 1px solid #333;
-  border-radius: 8px;
-  padding: 0.8rem;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.6rem;
-}
-
-.card img {
-  width: 60px;
-  height: 60px;
-  object-fit: cover;
-  border-radius: 6px;
-  border: 1px solid #444;
-  background: #0b0b0c;
-}
-
-.card .info h4 {
-  margin: 0;
-  font-size: 1rem;
-  color: #fff;
-}
-
-.card .info p {
-  margin: 0.2rem 0;
-  font-size: 0.85rem;
-  color: #aaa;
-}
-
-/* Botón verde “Ver …” */
-.btn-view {
+.btn-accent {
   display: inline-block;
-  margin-top: 0.5rem;
-  padding: 0.45rem 0.9rem;
-  background-color: #4caf50;
+  background: linear-gradient(180deg, #2b6ef6, #1f50d8);
   color: #fff;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: bold;
+  font-size: 0.95rem;
   text-decoration: none;
-  font-size: 0.85rem;
-}
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  margin-bottom: 16px;
 
-.btn-view:hover {
-  background-color: #66bb6a;
-}
+  &:hover {
+    background: linear-gradient(180deg, #3c7fff, #2b6ef6);
+  }
 
-/* Loader */
-.loader {
-  text-align: center;
-  color: #64b5f6;
-  padding: 2rem;
+  &:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
 }

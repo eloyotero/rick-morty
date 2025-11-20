@@ -1,49 +1,40 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
-import { EpisodesService, EpisodeAggregate } from '../episodes.service'; // ajusta la ruta según tu estructura
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+interface Episode {
+  id: number;
+  name: string;
+  air_date: string;
+  episode: string;
+  characters?: string[];
+}
 
 @Component({
   selector: 'app-episode-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   templateUrl: './episode-detail.component.html',
   styleUrls: ['./episode-detail.component.scss']
 })
 export class EpisodeDetailComponent implements OnInit {
-  loading = true;
-  episode = signal<EpisodeAggregate | null>(null);
+  episode: Episode | null = null;
+  returnPage = 1;
 
-  constructor(
-    private route: ActivatedRoute,
-    private episodesService: EpisodesService
-  ) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
 
-  ngOnInit(): void {
-    const code = this.route.snapshot.paramMap.get('code') ?? '';
-    this.episodesService.getAggregatedSeason1().subscribe({
-      next: (data: EpisodeAggregate[]) => {
-        const found = data.find((e: EpisodeAggregate) => e.code === code) ?? null;
-        this.episode.set(found);
-        this.loading = false;
-      },
-      error: (_err: unknown) => {
-        this.loading = false;
-      }
+  ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id')!;
+    this.returnPage = +(this.route.snapshot.queryParamMap.get('page') || 1);
+
+    this.http.get<any>('assets/episodes.json').subscribe(res => {
+      const list = res.results || res;
+      this.episode = list.find((e: any) => e.id === id) || null;
     });
   }
 
-  onImgError(event: Event, type: 'episode' | 'character' | 'team' | 'location') {
-    const img = event.target as HTMLImageElement | null;
-    if (!img) return;
-    const fallback =
-      type === 'episode'
-        ? 'assets/images/episodes/placeholder.png'
-        : type === 'character'
-        ? 'assets/images/characters/placeholder.png'
-        : type === 'team'
-        ? 'assets/images/teams/placeholder.png'
-        : 'assets/images/locations/placeholder.png';
-    img.src = fallback;
+  back() {
+    this.router.navigate(['/episodes'], { queryParams: { page: this.returnPage } });
   }
 }

@@ -1,33 +1,49 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterModule } from '@angular/router';
-import { TeamsService, TeamItem } from '../../teams.service';
+import { ActivatedRoute, Router, RouterModule } from '@angular/router';
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+
+interface Team {
+  id: number;
+  name: string;
+  description?: string;
+  members?: string[];
+  image: string;
+  created?: string;
+}
 
 @Component({
   selector: 'app-team-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule],
+  imports: [CommonModule, RouterModule, HttpClientModule],
   templateUrl: './team-detail.component.html',
   styleUrls: ['./team-detail.component.scss']
 })
 export class TeamDetailComponent implements OnInit {
-  team: TeamItem | null = null;
-  loading = true;
+  team: Team | null = null;
+  returnPage = 1;
 
-  constructor(private route: ActivatedRoute, private teamsService: TeamsService) {}
+  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
 
-  ngOnInit(): void {
-    const id = Number(this.route.snapshot.paramMap.get('id'));
-    this.teamsService.getTeam(id).subscribe({
-      next: (data) => { this.team = data ?? null; this.loading = false; },
-      error: () => { this.loading = false; }
+  ngOnInit() {
+    const id = +this.route.snapshot.paramMap.get('id')!;
+    this.returnPage = +(this.route.snapshot.queryParamMap.get('page') || 1);
+
+    this.http.get<any>('assets/teams.json').subscribe(res => {
+      const list = res.results || res;
+      this.team = list.find((t: any) => t.id === id) || null;
     });
   }
 
-  onImageError(event: Event) {
-    const img = event?.target as HTMLImageElement | null;
-    if (img && img.src.indexOf('placeholder.png') === -1) {
-      img.src = 'assets/images/teams/placeholder.png';
-    }
+  back() {
+    this.router.navigate(['/teams'], { queryParams: { page: this.returnPage } });
+  }
+
+  imagePath(filename: string): string {
+    return filename.startsWith('assets/') ? filename : 'assets/images/teams/' + filename;
+  }
+
+  onImageError(e: Event) {
+    (e.target as HTMLImageElement).src = 'assets/images/teams/placeholder.png';
   }
 }

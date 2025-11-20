@@ -1,34 +1,21 @@
-<section class="episodes-page">
-  <header class="section-header">
-    <h2>Rick & Morty Episodios</h2>
-    <span class="counter">Total: {{ totalItems() }}</span>
-  </header>
+<section class="episodes-grid-page">
+  <h2>Episodios</h2>
 
   <div *ngIf="loading" class="loader">Cargando episodios…</div>
 
   <div class="grid" *ngIf="!loading">
-    <article class="episode-card" *ngFor="let ep of pageItems()">
-      <div class="episode-header">
-        <img
-          [src]="ep.image || 'assets/images/episodes/placeholder.png'"
-          alt="Thumbnail {{ ep.code }}"
-          loading="lazy"
-          (error)="onImgError($event, 'episode')"
-          class="thumb"
-        />
-        <div class="meta">
-          <p class="title">{{ ep.title }}</p>
-          <p><strong>Fecha:</strong> {{ ep.date || '—' }}</p>
-          <p><strong>Código:</strong> {{ ep.code }}</p>
-          <a [routerLink]="['/episodes', ep.code]" class="btn-view">Ver episodio</a>
-        </div>
-      </div>
-    </article>
+    <div class="card" *ngFor="let ep of pageItems()">
+      <h3>{{ ep.name }}</h3>
+      <p><strong>Fecha:</strong> {{ ep.air_date }}</p>
+      <p><strong>Código:</strong> {{ ep.episode }}</p>
+      <a [routerLink]="['/episodes', ep.id]" [queryParams]="{ page: page }" class="btn-accent">Ver episodio</a>
+    </div>
   </div>
 
-  <footer class="footer-pager" *ngIf="!loading && totalPages() > 1">
-    <button class="btn" (click)="page.set(page() - 1)" [disabled]="page() === 1">Anterior</button>
-    <button class="btn" (click)="page.set(page() + 1)" [disabled]="page() === totalPages()">Siguiente</button>
-  </footer>
+  <div class="pagination-bar">
+    <button (click)="prevPage()" [disabled]="page === 1" class="btn-accent">Anterior</button>
+    <span>Página {{ page }} de {{ totalPages }} ({{ totalItems }} {{ labelPlural }})</span>
+    <button (click)="nextPage()" [disabled]="page === totalPages" class="btn-accent">Siguiente</button>
+  </div>
 </section>
 

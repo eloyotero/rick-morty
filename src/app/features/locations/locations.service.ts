@@ -1,4 +1,4 @@
-// src/app/features/locations/locations.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { map, Observable } from 'rxjs';
@@ -10,7 +10,7 @@ export interface LocationItem {
   dimension: string;
   episode?: string;
   residents: string[];
-  image?: string; // imagen opcional
+  image?: string; 
 }
 
 @Injectable({ providedIn: 'root' })

@@ -1,34 +1,16 @@
-<section class="team-detail">
-  <a routerLink="/teams" class="back-link">← Volver</a>
+<section class="team-detail" *ngIf="team">
+  <button (click)="back()" class="btn-accent">← Volver</button>
 
-  <div *ngIf="loading" class="loader">Cargando equipo…</div>
+  <img
+    [src]="imagePath(team.image)"
+    (error)="onImageError($event)"
+    alt="{{ team.name }}"
+  />
 
-  <div *ngIf="!loading && team">
-    <div class="header">
-      <img
-        [src]="team.image || 'assets/images/teams/placeholder.png'"
-        [alt]="team.name"
-        loading="lazy"
-        (error)="onImageError($event)"
-        class="avatar"
-        width="96"
-        height="96"
-      />
-      <h2>{{ team.name }}</h2>
-    </div>
+  <h1>{{ team.name }}</h1>
+  <p>{{ team.description }}</p>
+  <p *ngIf="team.created"><strong>Creado:</strong> {{ team.created }}</p>
 
-    <ul class="info">
-      <li><strong>ID:</strong> {{ team.id }}</li>
-      <li><strong>Descripción:</strong> {{ team.description }}</li>
-      <li><strong>Creado:</strong> {{ team.created }}</li>
-      <li><strong>Miembros:</strong> {{ team.members.length }}</li>
-    </ul>
-
-    <h3>Miembros</h3>
-    <ul class="members-list">
-      <li *ngFor="let m of team.members">
-        {{ m }}
-      </li>
-    </ul>
-  </div>
+  <h3>Miembros</h3>
+  <ul><li *ngFor="let m of team.members">{{ m }}</li></ul>
 </section>

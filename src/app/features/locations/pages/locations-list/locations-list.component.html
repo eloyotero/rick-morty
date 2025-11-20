@@ -1,30 +1,17 @@
-<section class="locations-page">
+<section class="locations-list">
   <header class="section-header">
     <h2>Localizaciones</h2>
-
-    <div class="pager">
-      <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
-      <span class="page-info">
-        Página {{ page() }} de {{ totalPages() }}
-        <small>({{ totalItems() }} ubicaciones)</small>
-      </span>
-      <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
-    </div>
   </header>
 
-  <div *ngIf="loading" class="loader">Cargando localizaciones…</div>
-
-  <div class="locations-grid" *ngIf="!loading">
-    <article class="location-card" *ngFor="let loc of pageItems(); trackBy: trackById">
+  <div class="locations-container">
+    <div *ngFor="let loc of locations()" class="location-card">
       <div class="avatar-wrap">
         <img
-          [src]="loc.image || 'assets/images/locations/placeholder.png'"
+          [src]="'assets/images/locations/' + (loc.image || 'placeholder.png')"
           [alt]="loc.name"
+          class="location-thumb"
           loading="lazy"
           (error)="onImageError($event)"
-          class="avatar"
-          width="92"
-          height="92"
         />
       </div>
 
@@ -34,13 +21,11 @@
         <p><strong>Dimensión:</strong> {{ loc.dimension }}</p>
         <p><strong>Episodio:</strong> {{ loc.episode }}</p>
         <p><strong>Residentes:</strong> {{ loc.residents.length }}</p>
-        <a [routerLink]="['/locations', loc.id]" class="btn-detail">Ver detalle</a>
-      </div>
-    </article>
-  </div>
 
-  <footer class="footer-pager" *ngIf="!loading && totalPages() > 1">
-    <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
-    <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
-  </footer>
+        <button [routerLink]="['/locations', loc.id]" class="btn">
+          Ver detalle
+        </button>
+      </div>
+    </div>
+  </div>
 </section>

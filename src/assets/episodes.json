@@ -1,11 +1,12 @@
 {
     "results": [
-      {
-        "code": "S01E01",
-        "title": "Pilot",
-        "date": "December 2, 2013",
-        "image": "assets/images/episodes/s01e01.png"
-      },
+        {
+            "code": "S01E01",
+            "title": "Pilot",
+            "date": "December 2, 2013",
+            "image": "assets/images/episodes/s01e01.png"
+          },
+          
       {
         "code": "S01E02",
         "title": "Lawnmower Dog",

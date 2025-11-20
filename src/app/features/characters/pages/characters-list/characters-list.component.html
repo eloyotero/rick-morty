@@ -1,38 +1,38 @@
-<!-- src/app/features/characters/pages/characters-list/characters-list.component.html -->
 <section class="characters-page">
   <header class="section-header">
     <h2>Personajes</h2>
-
-    <div class="pager">
-      <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
-      <span class="page-info">
-        Página {{ page() }} de {{ totalPages() }}
-        <small>({{ totalItems() }} personajes)</small>
-      </span>
-      <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
-    </div>
   </header>
 
-  <div *ngIf="loading" class="loader">Cargando personajes…</div>
+  <div class="characters-grid">
+    <article class="card" *ngFor="let ch of characters; trackBy: trackById">
+      <div class="card-media">
+        <img
+          [src]="imagePath(ch.image)"
+          [alt]="ch.name"
+          (error)="onImageError($event)"
+          loading="lazy"
+        />
+      </div>
 
-  <div class="characters-grid" *ngIf="!loading">
-    <article class="character-card" *ngFor="let ch of pageItems(); trackBy: trackById">
-      <img *ngIf="ch.image" [src]="ch.image" [alt]="ch.name" class="avatar" />
-      <div class="character-content">
-        <h3>{{ ch.name }}</h3>
-        <p><strong>Estado:</strong> {{ ch.status }}</p>
-        <p><strong>Especie:</strong> {{ ch.species }}</p>
-        <p><strong>Género:</strong> {{ ch.gender }}</p>
-        <p><strong>Origen:</strong> {{ ch.origin }}</p>
-        <p><strong>Ubicación:</strong> {{ ch.location }}</p>
-        <p><strong>Episodios:</strong> {{ ch.episode.join(', ') }}</p>
-        <a [routerLink]="['/characters', ch.id]" class="btn-detail">Ver detalle</a>
+      <div class="card-body">
+        <h3 class="card-title">{{ ch.name }}</h3>
+
+        <ul class="meta-list">
+          <li><strong>Estado:</strong> {{ ch.status || 'Unknown' }}</li>
+          <li><strong>Especie:</strong> {{ ch.species || 'Unknown' }}</li>
+          <li><strong>Género:</strong> {{ ch.gender || 'Unknown' }}</li>
+          <li><strong>Origen:</strong> {{ ch.origin || 'Unknown' }}</li>
+          <li *ngIf="ch.episode"><strong>Episodios:</strong> {{ (ch.episode?.length ?? (ch.episode ? 1 : 0)) }}</li>
+        </ul>
+
+        <div class="card-actions">
+          <button class="btn-primary" (click)="goToDetail(ch.id)">Ver detalle</button>
+        </div>
       </div>
     </article>
   </div>
 
-  <footer class="footer-pager" *ngIf="!loading && totalPages() > 1">
-    <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
-    <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
-  </footer>
+  <div *ngIf="!loading && characters.length === 0" class="no-data">
+    No hay personajes cargados.
+  </div>
 </section>
