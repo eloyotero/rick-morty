@@ -1,43 +1,124 @@
-/* src/app/features/episodes/pages/episode-detail/episode-detail.component.scss */
-.detail-page {
-  padding: 2rem;
-  background: #1e1e2f;
-  color: #f0f0f0;
+:host, .episode-detail {
+  background: #0f0f10;
+  color: #eee;
   min-height: 100vh;
+  display: block;
+  padding-bottom: 2rem;
+}
+
+/* Barra superior */
+.topbar {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #222;
 }
 
 .back {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: #4fc3f7;
+  color: #90caf9;
   text-decoration: none;
 }
 
-.detail {
-  background: #2c2c3e;
-  border-radius: 10px;
-  padding: 1rem;
-
-  h2 {
-    margin-top: 0;
-    color: #4fc3f7;
-  }
-  p {
-    margin: 0.4rem 0;
-  }
+.back:hover {
+  text-decoration: underline;
 }
 
+/* Hero con imagen y metadatos */
+.hero {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 1rem;
+  align-items: center;
+  padding: 1.25rem 2rem;
+}
+
+.thumb {
+  width: 160px;
+  height: 100px;
+  object-fit: cover;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #0b0b0c;
+}
+
+.meta p {
+  margin: 0.2rem 0;
+}
+
+/* Bloques de personajes, equipos y localizaciones */
+.block {
+  margin-top: 1.5rem;
+  padding: 0 2rem;
+}
+
+.block h3 {
+  font-size: 1.2rem;
+  margin-bottom: 0.8rem;
+  color: #cbd5e1;
+  border-bottom: 1px solid #333;
+  padding-bottom: 0.4rem;
+}
+
+/* Grid de tarjetas */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 1rem;
+}
+
+/* Tarjeta individual */
+.card {
+  background: #1a1a1c;
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 0.8rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.6rem;
+}
+
+.card img {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #444;
+  background: #0b0b0c;
+}
+
+.card .info h4 {
+  margin: 0;
+  font-size: 1rem;
+  color: #fff;
+}
+
+.card .info p {
+  margin: 0.2rem 0;
+  font-size: 0.85rem;
+  color: #aaa;
+}
+
+/* Botón verde “Ver …” */
+.btn-view {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.85rem;
+}
+
+.btn-view:hover {
+  background-color: #66bb6a;
+}
+
+/* Loader */
 .loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #4fc3f7;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 2rem auto;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+  text-align: center;
+  color: #64b5f6;
+  padding: 2rem;
 }

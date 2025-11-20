@@ -1,55 +1,103 @@
-/* src/app/features/episodes/pages/episodes-list/episodes-list.component.scss */
-.episodes-page {
-  padding: 2rem;
-  background: #1e1e2f;
-  color: #f0f0f0;
+:host, .episodes-page {
+  background: #0f0f10;
+  color: #eee;
   min-height: 100vh;
+  display: block;
 }
 
 .section-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  border-bottom: 1px solid #222;
 }
 
-.episodes-grid {
+.counter {
+  color: #9aa0a6;
+}
+
+.grid {
+  padding: 2rem;
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 1.5rem;
 }
 
 .episode-card {
-  background: #2c2c3e;
+  background: #151517;
+  border: 1px solid #222;
   border-radius: 10px;
   padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+}
+
+.episode-header {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: 1rem;
+  align-items: center;
+}
+
+.thumb {
+  width: 120px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: 6px;
+  border: 1px solid #333;
+  background: #0b0b0c;
+}
+
+.meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.meta .title {
+  font-size: 1.1rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.btn-view {
+  display: inline-block;
+  margin-top: 0.5rem;
+  padding: 0.45rem 0.9rem;
+  background-color: #4caf50;
+  color: #fff;
+  border-radius: 4px;
   text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  transition: transform 0.25s ease;
+  font-size: 0.85rem;
+}
 
-  &:hover {
-    transform: translateY(-3px);
-  }
+.btn-view:hover {
+  background-color: #66bb6a;
+}
 
-  h3 {
-    margin: 0 0 0.5rem;
-    color: #4fc3f7;
-  }
-  p {
-    margin: 0.25rem 0;
-  }
+.footer-pager {
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 1rem;
+}
+
+.btn {
+  background: #2196f3;
+  color: #fff;
+  border: none;
+  padding: 0.45rem 0.9rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn:disabled {
+  opacity: 0.5;
+  cursor: default;
 }
 
 .loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #4fc3f7;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 2rem auto;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
+  text-align: center;
+  color: #64b5f6;
+  padding: 2rem;
 }

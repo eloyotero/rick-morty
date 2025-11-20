@@ -1,4 +1,32 @@
-/* You can add global styles to this file, and also import other style files */
-
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body {
+    background-color: #000;   // fondo negro
+    color: #fff;              // texto blanco
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  a, button {
+    color: #2196f3;           // azul eléctrico
+    text-decoration: none;
+    transition: color 0.2s ease;
+  }
+  
+  a:hover, button:hover {
+    color: #64b5f6;           // azul claro al pasar el ratón
+  }
+  
+  .section-header h2 {
+    color: #2196f3;           // títulos destacados en azul
+  }
+  
+  .loader {
+    color: #64b5f6;           // loaders en azul claro
+  }
+  
+  body {
+    background-color: #000;   // fondo negro
+    color: #fff;              // texto blanco
+    margin: 0;
+    font-family: Arial, sans-serif;
+  }
+  

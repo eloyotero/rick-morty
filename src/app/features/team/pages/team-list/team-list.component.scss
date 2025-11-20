@@ -1,52 +1,16 @@
-.teams-page {
-  padding: 2rem;
-  background: #1e1e2f;
-  color: #f0f0f0;
-  min-height: 100vh;
-}
+.teams-page { padding: 2rem; }
+.section-header { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+.pager { display: flex; align-items: center; gap: 0.75rem; }
+.page-info { color: #bbb; }
+.btn { background: #2196f3; color: #fff; border: none; padding: 0.45rem 0.9rem; border-radius: 4px; cursor: pointer; transition: opacity 0.2s ease; }
+.btn:disabled { opacity: 0.5; cursor: default; }
 
-.section-header {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
-
-.teams-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-  gap: 1.25rem;
-}
-
-.team-card {
-  background: #2c2c3e;
-  border-radius: 10px;
-  padding: 1rem;
-  text-decoration: none;
-  color: inherit;
-  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.4);
-  transition: transform 0.25s ease;
-
-  &:hover {
-    transform: translateY(-3px);
-  }
-
-  h3 {
-    margin: 0 0 0.5rem;
-    color: #ff9800;
-  }
-}
-
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #ff9800;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 2rem auto;
-  animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+.teams-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; }
+.team-card { background: #1e1e1e; color: #fff; border-radius: 8px; padding: 1rem; box-shadow: 0 2px 6px rgba(0,0,0,0.3); display: grid; grid-template-columns: 92px 1fr; gap: 1rem; }
+.avatar-wrap { display: flex; align-items: flex-start; }
+.avatar { width: 92px; height: 92px; object-fit: cover; border-radius: 6px; border: 1px solid #333; background: #111; }
+.desc { color: #bbb; margin: 0.5rem 0; }
+.btn-detail { display: inline-block; margin-top: 0.5rem; padding: 0.5rem 1rem; background-color: #4caf50; color: #fff; border-radius: 4px; text-decoration: none; transition: background-color 0.2s ease; }
+.btn-detail:hover { background-color: #66bb6a; }
+.footer-pager { display: flex; justify-content: center; gap: 1rem; margin-top: 1.5rem; }
+.loader { text-align: center; color: #64b5f6; }

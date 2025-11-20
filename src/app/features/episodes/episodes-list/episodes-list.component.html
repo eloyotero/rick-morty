@@ -1,33 +1,34 @@
-<!-- src/app/features/episodes/pages/episodes-list/episodes-list.component.html -->
 <section class="episodes-page">
   <header class="section-header">
-    <h2>Episodes</h2>
+    <h2>Rick & Morty Episodios</h2>
+    <span class="counter">Total: {{ totalItems() }}</span>
   </header>
 
   <div *ngIf="loading" class="loader">Cargando episodios…</div>
 
-  <div class="episodes-grid" *ngIf="!loading">
-    <a
-      class="episode-card"
-      *ngFor="let ep of episodes"
-      [routerLink]="['/episodes', ep.id]"
-    >
-      <img
-        src="assets/images/episode-placeholder.jpg"
-        alt="Imagen del episodio {{ ep.name }}"
-        class="episode-image"
-      />
-
-      <div class="episode-content">
-        <h3 class="episode-title">{{ ep.name }}</h3>
-        <p class="episode-meta"><strong>Fecha:</strong> {{ ep.air_date }}</p>
-        <p class="episode-meta"><strong>Código:</strong> {{ ep.episode }}</p>
-        <button class="episode-btn" type="button">Ver detalle</button>
+  <div class="grid" *ngIf="!loading">
+    <article class="episode-card" *ngFor="let ep of pageItems()">
+      <div class="episode-header">
+        <img
+          [src]="ep.image || 'assets/images/episodes/placeholder.png'"
+          alt="Thumbnail {{ ep.code }}"
+          loading="lazy"
+          (error)="onImgError($event, 'episode')"
+          class="thumb"
+        />
+        <div class="meta">
+          <p class="title">{{ ep.title }}</p>
+          <p><strong>Fecha:</strong> {{ ep.date || '—' }}</p>
+          <p><strong>Código:</strong> {{ ep.code }}</p>
+          <a [routerLink]="['/episodes', ep.code]" class="btn-view">Ver episodio</a>
+        </div>
       </div>
-    </a>
+    </article>
   </div>
 
-  <div class="empty" *ngIf="!loading && episodes.length === 0">
-    No hay episodios para mostrar.
-  </div>
+  <footer class="footer-pager" *ngIf="!loading && totalPages() > 1">
+    <button class="btn" (click)="page.set(page() - 1)" [disabled]="page() === 1">Anterior</button>
+    <button class="btn" (click)="page.set(page() + 1)" [disabled]="page() === totalPages()">Siguiente</button>
+  </footer>
 </section>
+

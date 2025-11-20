@@ -1,35 +1,34 @@
-// src/app/features/locations/pages/location-detail/location-detail.component.ts
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { ActivatedRoute, RouterLink } from '@angular/router';
-import { LocationsService, Location } from '../../locations.service';
+import { ActivatedRoute, RouterModule } from '@angular/router';
+import { LocationsService, LocationItem } from '../../locations.service';
 
 @Component({
   selector: 'app-location-detail',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterModule],
   templateUrl: './location-detail.component.html',
-  styleUrls: ['./location-detail.component.scss'],
+  styleUrls: ['./location-detail.component.scss']
 })
 export class LocationDetailComponent implements OnInit {
-  location?: Location;
+  location: LocationItem | null = null;
   loading = true;
 
-  constructor(
-    private route: ActivatedRoute,
-    private locationsService: LocationsService
-  ) {}
+  constructor(private route: ActivatedRoute, private locationsService: LocationsService) {}
 
   ngOnInit(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));
     this.locationsService.getLocation(id).subscribe({
-      next: (l) => {
-        this.location = l;
-        this.loading = false;
-      },
-      error: () => {
-        this.loading = false;
-      },
+      next: (data) => { this.location = data ?? null; this.loading = false; },
+      error: () => { this.loading = false; }
     });
+  }
+
+  // Maneja error de carga de imagen desde la plantilla
+  onImageError(event: Event) {
+    const img = event?.target as HTMLImageElement | null;
+    if (img && img.src.indexOf('placeholder.png') === -1) {
+      img.src = 'assets/images/locations/placeholder.png';
+    }
   }
 }

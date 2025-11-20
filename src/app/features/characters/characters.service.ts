@@ -1,32 +1,37 @@
-// src/app/features/characters/characters.service.ts
+
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
-export interface Character {
+export interface CharacterItem {
   id: number;
   name: string;
   status: string;
   species: string;
+  type: string;
   gender: string;
-  image: string;
-  origin: { name: string };
-  location: { name: string };
+  origin: string;
+  location: string;
+  image?: string;
+  episode: string[];
 }
+
+const ALLOWED = new Set(['S01E01','S01E02','S01E03','S01E04','S01E05','S01E06','S01E07','S01E08','S01E09','S01E10','S01E11']);
 
 @Injectable({ providedIn: 'root' })
 export class CharactersService {
-  private apiUrl = 'https://rickandmortyapi.com/api/character';
-
   constructor(private http: HttpClient) {}
 
-  getCharacters(page = 1): Observable<{ results: Character[] }> {
-    return this.http.get<{ results: Character[] }>(
-      `${this.apiUrl}?page=${page}`
+  getAllCharacters(): Observable<{ results: CharacterItem[] }> {
+    return this.http.get<{ results: CharacterItem[] }>('/assets/characters.json').pipe(
+      map(data => ({
+       
+        results: (data.results ?? []).filter(ch => ch.episode?.some(ep => ALLOWED.has(ep))).sort((a, b) => a.id - b.id)
+      }))
     );
   }
 
-  getCharacter(id: number): Observable<Character> {
-    return this.http.get<Character>(`${this.apiUrl}/${id}`);
+  getCharacter(id: number): Observable<CharacterItem | undefined> {
+    return this.getAllCharacters().pipe(map(d => d.results.find(c => c.id === id)));
   }
 }

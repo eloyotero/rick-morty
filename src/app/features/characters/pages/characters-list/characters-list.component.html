@@ -2,21 +2,37 @@
 <section class="characters-page">
   <header class="section-header">
     <h2>Personajes</h2>
+
+    <div class="pager">
+      <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
+      <span class="page-info">
+        Página {{ page() }} de {{ totalPages() }}
+        <small>({{ totalItems() }} personajes)</small>
+      </span>
+      <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
+    </div>
   </header>
 
-  <div *ngIf="loading" class="loader"></div>
+  <div *ngIf="loading" class="loader">Cargando personajes…</div>
 
-  <div class="cards-grid" *ngIf="!loading">
-    <a
-      class="card"
-      *ngFor="let c of characters"
-      [routerLink]="['/characters', c.id]"
-    >
-      <img [src]="c.image" [alt]="c.name" />
-      <div class="content">
-        <h3>{{ c.name }}</h3>
-        <p>{{ c.status }} · {{ c.species }}</p>
+  <div class="characters-grid" *ngIf="!loading">
+    <article class="character-card" *ngFor="let ch of pageItems(); trackBy: trackById">
+      <img *ngIf="ch.image" [src]="ch.image" [alt]="ch.name" class="avatar" />
+      <div class="character-content">
+        <h3>{{ ch.name }}</h3>
+        <p><strong>Estado:</strong> {{ ch.status }}</p>
+        <p><strong>Especie:</strong> {{ ch.species }}</p>
+        <p><strong>Género:</strong> {{ ch.gender }}</p>
+        <p><strong>Origen:</strong> {{ ch.origin }}</p>
+        <p><strong>Ubicación:</strong> {{ ch.location }}</p>
+        <p><strong>Episodios:</strong> {{ ch.episode.join(', ') }}</p>
+        <a [routerLink]="['/characters', ch.id]" class="btn-detail">Ver detalle</a>
       </div>
-    </a>
+    </article>
   </div>
+
+  <footer class="footer-pager" *ngIf="!loading && totalPages() > 1">
+    <button class="btn" (click)="prevPage()" [disabled]="page() === 1">Anterior</button>
+    <button class="btn" (click)="nextPage()" [disabled]="page() === totalPages()">Siguiente</button>
+  </footer>
 </section>

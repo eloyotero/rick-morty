@@ -1,15 +1,34 @@
-<!-- team-detail.component.html -->
-<section class="detail-page" *ngIf="!loading && team">
-  <a routerLink="/teams" class="back">← Volver</a>
+<section class="team-detail">
+  <a routerLink="/teams" class="back-link">← Volver</a>
 
-  <div class="detail">
-    <h2>{{ team.name }}</h2>
-    <p>{{ team.description }}</p>
-    <h3>Miembros:</h3>
-    <ul>
-      <li *ngFor="let m of team.members">{{ m }}</li>
+  <div *ngIf="loading" class="loader">Cargando equipo…</div>
+
+  <div *ngIf="!loading && team">
+    <div class="header">
+      <img
+        [src]="team.image || 'assets/images/teams/placeholder.png'"
+        [alt]="team.name"
+        loading="lazy"
+        (error)="onImageError($event)"
+        class="avatar"
+        width="96"
+        height="96"
+      />
+      <h2>{{ team.name }}</h2>
+    </div>
+
+    <ul class="info">
+      <li><strong>ID:</strong> {{ team.id }}</li>
+      <li><strong>Descripción:</strong> {{ team.description }}</li>
+      <li><strong>Creado:</strong> {{ team.created }}</li>
+      <li><strong>Miembros:</strong> {{ team.members.length }}</li>
+    </ul>
+
+    <h3>Miembros</h3>
+    <ul class="members-list">
+      <li *ngFor="let m of team.members">
+        {{ m }}
+      </li>
     </ul>
   </div>
 </section>
-
-<div *ngIf="loading" class="loader"></div>

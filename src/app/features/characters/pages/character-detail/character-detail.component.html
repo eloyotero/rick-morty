@@ -1,18 +1,23 @@
 <!-- src/app/features/characters/pages/character-detail/character-detail.component.html -->
-<section class="detail-page" *ngIf="!loading && character">
-  <a routerLink="/characters" class="back">← Volver</a>
+<section class="character-detail">
+  <a routerLink="/characters" class="back-link">← Volver</a>
 
-  <div class="detail">
-    <img [src]="character.image" [alt]="character.name" />
-    <div class="info">
+  <div *ngIf="loading" class="loader">Cargando personaje…</div>
+
+  <div *ngIf="!loading && character">
+    <div class="header">
+      <img *ngIf="character.image" [src]="character.image" [alt]="character.name" class="avatar" />
       <h2>{{ character.name }}</h2>
-      <p><strong>Estado:</strong> {{ character.status }}</p>
-      <p><strong>Especie:</strong> {{ character.species }}</p>
-      <p><strong>Género:</strong> {{ character.gender }}</p>
-      <p><strong>Origen:</strong> {{ character.origin?.name }}</p>
-      <p><strong>Ubicación:</strong> {{ character.location?.name }}</p>
     </div>
+
+    <ul class="info">
+      <li><strong>Estado:</strong> {{ character.status }}</li>
+      <li><strong>Especie:</strong> {{ character.species }}</li>
+      <li><strong>Tipo:</strong> {{ character.type || '—' }}</li>
+      <li><strong>Género:</strong> {{ character.gender }}</li>
+      <li><strong>Origen:</strong> {{ character.origin }}</li>
+      <li><strong>Ubicación:</strong> {{ character.location }}</li>
+      <li><strong>Episodios:</strong> {{ character.episode.join(', ') }}</li>
+    </ul>
   </div>
 </section>
-
-<div *ngIf="loading" class="loader"></div>

@@ -1,35 +1,27 @@
-// src/app/features/teams/teams.service.ts
 import { Injectable } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
+import { map, Observable } from 'rxjs';
 
-export interface Team {
+export interface TeamItem {
   id: number;
   name: string;
   description: string;
+  created: string;
   members: string[];
+  image?: string;
 }
 
 @Injectable({ providedIn: 'root' })
 export class TeamsService {
-  private teams: Team[] = [
-    {
-      id: 1,
-      name: 'Council of Ricks',
-      description: 'Organización formada por múltiples variantes de Rick.',
-      members: ['Rick C-137', 'Rick Prime', 'Rick D716'],
-    },
-    {
-      id: 2,
-      name: 'Galactic Federation',
-      description: 'Gobierno intergaláctico que controla múltiples planetas.',
-      members: ['Federation Guard', 'Federation Officer'],
-    },
-  ];
+  constructor(private http: HttpClient) {}
 
-  getTeams(): Team[] {
-    return this.teams;
+  getAllTeams(): Observable<{ results: TeamItem[] }> {
+    return this.http.get<{ results: TeamItem[] }>('/assets/teams.json').pipe(
+      map(data => ({ results: (data.results ?? []).sort((a,b) => a.id - b.id) }))
+    );
   }
 
-  getTeam(id: number): Team | undefined {
-    return this.teams.find((t) => t.id === id);
+  getTeam(id: number): Observable<TeamItem | undefined> {
+    return this.getAllTeams().pipe(map(d => d.results.find(t => t.id === id)));
   }
 }

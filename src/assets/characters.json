@@ -1,0 +1,55 @@
+
+{
+    "results": [
+      { "id": 1, "name": "Rick Sanchez", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/rick.png", "episode": ["S01E01", "S01E02", "S01E03", "S01E04"] },
+      { "id": 2, "name": "Morty Smith", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/morty.png", "episode": ["S01E01", "S01E02", "S01E03", "S01E04"] },
+      { "id": 3, "name": "Summer Smith", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/summer.png", "episode": ["S01E01", "S01E03"] },
+      { "id": 4, "name": "Beth Smith", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/beth.png", "episode": ["S01E01", "S01E02", "S01E03"] },
+      { "id": 5, "name": "Jerry Smith", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/jerry.png", "episode": ["S01E01", "S01E02", "S01E04"] },
+  
+      { "id": 6, "name": "Jessica", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Earth (C-137)", "location": "Harry Herpson High School", "image": "assets/images/characters/jessica.png", "episode": ["S01E01"] },
+      { "id": 7, "name": "Mr. Goldenfold", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Harry Herpson High School", "image": "assets/images/characters/goldenfold.png", "episode": ["S01E01", "S01E02"] },
+      { "id": 8, "name": "Snuffles", "status": "Alive", "species": "Dog", "type": "Intelligent dog", "gender": "Male", "origin": "Earth (C-137)", "location": "Dog World", "image": "assets/images/characters/snuffles.png", "episode": ["S01E02"] },
+      { "id": 9, "name": "Scary Terry", "status": "Alive", "species": "Alien", "type": "Dream entity", "gender": "Male", "origin": "Dreamscape", "location": "Dreamscape", "image": "assets/images/characters/scary-terry.png", "episode": ["S01E02"] },
+      { "id": 10, "name": "Mrs. Pancakes", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Dreamscape", "location": "Dream apartment", "image": "assets/images/characters/mrs-pancakes.png", "episode": ["S01E02"] },
+  
+      { "id": 11, "name": "Dr. Xenon Bloom", "status": "Dead", "species": "Amoeba", "type": "Sentient", "gender": "Male", "origin": "Anatomy Park", "location": "Anatomy Park", "image": "assets/images/characters/xenon-bloom.png", "episode": ["S01E03"] },
+      { "id": 12, "name": "Annie", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Anatomy Park", "location": "Anatomy Park", "image": "assets/images/characters/annie.png", "episode": ["S01E03"] },
+      { "id": 13, "name": "Ruben", "status": "Dead", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/ruben.png", "episode": ["S01E03"] },
+  
+      { "id": 14, "name": "Zigerion Alien", "status": "Alive", "species": "Alien", "type": "Zigerion", "gender": "Unknown", "origin": "Zigerion Planet", "location": "Zigerion Ship", "image": "assets/images/characters/zigarion.png", "episode": ["S01E04"] },
+  
+      { "id": 21, "name": "Mr. Meeseeks", "status": "Unknown", "species": "Humanoid", "type": "Meeseeks", "gender": "Male", "origin": "Meeseeks Box", "location": "Smith Family House", "image": "assets/images/characters/meeseeks.png", "episode": ["S01E05"] },
+      { "id": 22, "name": "Principal Gene Vagina", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Harry Herpson High School", "image": "assets/images/characters/gene.png", "episode": ["S01E05"] },
+      { "id": 23, "name": "Old Man Mr. Meeseeks", "status": "Unknown", "species": "Humanoid", "type": "Meeseeks", "gender": "Male", "origin": "Meeseeks Box", "location": "Golf Course", "image": "assets/images/characters/meeseeks-old.png", "episode": ["S01E05"] },
+  
+      { "id": 31, "name": "Coach Feratu (Balik Alistane)", "status": "Dead", "species": "Vampire", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Harry Herpson High School", "image": "assets/images/characters/coach-feratu.png", "episode": ["S01E06"] },
+      { "id": 32, "name": "Cronenberg Morty", "status": "Alive", "species": "Cronenberg", "type": "", "gender": "Male", "origin": "Cronenberg Earth", "location": "Cronenberg Earth", "image": "assets/images/characters/cronenberg-morty.png", "episode": ["S01E06"] },
+      { "id": 33, "name": "Cronenberg Rick", "status": "Alive", "species": "Cronenberg", "type": "", "gender": "Male", "origin": "Cronenberg Earth", "location": "Cronenberg Earth", "image": "assets/images/characters/cronenberg-rick.png", "episode": ["S01E06"] },
+  
+      { "id": 41, "name": "Gwendolyn (Sex Robot)", "status": "Alive", "species": "Robot", "type": "Gazorpazorpian birthing", "gender": "Female", "origin": "Pawn Shop", "location": "Earth (C-137)", "image": "assets/images/characters/gwendolyn.png", "episode": ["S01E07"] },
+      { "id": 42, "name": "Morty Jr.", "status": "Alive", "species": "Gazorpazorp", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Earth (C-137)", "image": "assets/images/characters/morty-jr.png", "episode": ["S01E07"] },
+      { "id": 43, "name": "Ma-Sha", "status": "Alive", "species": "Gazorpazorp", "type": "", "gender": "Female", "origin": "Gazorpazorp", "location": "Gazorpazorp (female city)", "image": "assets/images/characters/ma-sha.png", "episode": ["S01E07"] },
+  
+      { "id": 51, "name": "Jerry (Alternate TV skits)", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Smith Family House", "image": "assets/images/characters/jerry.png", "episode": ["S01E08"] },
+      { "id": 52, "name": "Beth (Alternate TV skits)", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Earth (C-137)", "location": "Smith Family House", "image": "assets/images/characters/beth.png", "episode": ["S01E08"] },
+      { "id": 53, "name": "Summer (Alternate TV skits)", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Earth (C-137)", "location": "Smith Family House", "image": "assets/images/characters/summer.png", "episode": ["S01E08"] },
+      { "id": 54, "name": "Ants-in-My-Eyes Johnson", "status": "Unknown", "species": "Alien", "type": "", "gender": "Male", "origin": "Alternate TV", "location": "Alternate TV", "image": "assets/images/characters/ants-in-my-eyes.png", "episode": ["S01E08"] },
+  
+      { "id": 61, "name": "Mr. Needful", "status": "Alive", "species": "Unknown", "type": "Devil?", "gender": "Male", "origin": "Earth (C-137)", "location": "Needful Things", "image": "assets/images/characters/mr-needful.png", "episode": ["S01E09"] },
+      { "id": 62, "name": "Summer Smith (Needful)", "status": "Alive", "species": "Human", "type": "", "gender": "Female", "origin": "Earth (C-137)", "location": "Needful Things", "image": "assets/images/characters/summer.png", "episode": ["S01E09"] },
+      { "id": 63, "name": "Rick Sanchez (Needful arc)", "status": "Alive", "species": "Human", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Needful Things", "image": "assets/images/characters/rick.png", "episode": ["S01E09"] },
+  
+      { "id": 71, "name": "Evil Rick", "status": "Dead", "species": "Human", "type": "Rick variant", "gender": "Male", "origin": "Unknown", "location": "Citadel of Ricks", "image": "assets/images/characters/evil-rick.png", "episode": ["S01E10"] },
+      { "id": 72, "name": "Evil Morty", "status": "Alive", "species": "Human", "type": "Morty variant", "gender": "Male", "origin": "Unknown", "location": "Citadel of Ricks", "image": "assets/images/characters/evil-morty.png", "episode": ["S01E10"] },
+      { "id": 73, "name": "Doofus Rick", "status": "Alive", "species": "Human", "type": "Rick variant", "gender": "Male", "origin": "Unknown", "location": "Citadel of Ricks", "image": "assets/images/characters/doofus-rick.png", "episode": ["S01E10"] },
+      { "id": 74, "name": "Council of Ricks Member", "status": "Alive", "species": "Human", "type": "Rick variant", "gender": "Male", "origin": "Multiverse", "location": "Citadel of Ricks", "image": "assets/images/characters/council-rick.png", "episode": ["S01E10"] },
+      { "id": 75, "name": "Random Morty (Citadel)", "status": "Alive", "species": "Human", "type": "Morty variant", "gender": "Male", "origin": "Multiverse", "location": "Citadel of Ricks", "image": "assets/images/characters/morty.png", "episode": ["S01E10"] },
+  
+      { "id": 81, "name": "Birdperson", "status": "Alive", "species": "Bird-Person", "type": "", "gender": "Male", "origin": "Bird World", "location": "Smith Family House (Party)", "image": "assets/images/characters/birdperson.png", "episode": ["S01E11"] },
+      { "id": 82, "name": "Squanchy", "status": "Alive", "species": "Cat-like alien", "type": "", "gender": "Male", "origin": "Squanch Planet", "location": "Smith Family House (Party)", "image": "assets/images/characters/squanchy.png", "episode": ["S01E11"] },
+      { "id": 83, "name": "Abradolf Lincler", "status": "Unknown", "species": "Human hybrid", "type": "", "gender": "Male", "origin": "Earth (C-137)", "location": "Smith Family House (Party)", "image": "assets/images/characters/lincler.png", "episode": ["S01E11"] },
+      { "id": 84, "name": "Gearhead", "status": "Alive", "species": "Alien", "type": "", "gender": "Male", "origin": "Gear Planet", "location": "Smith Family House (Party)", "image": "assets/images/characters/gearhead.png", "episode": ["S01E11"] }
+    ]
+  }
+  

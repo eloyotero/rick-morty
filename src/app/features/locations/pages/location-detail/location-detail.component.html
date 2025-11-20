@@ -1,12 +1,34 @@
-<!-- src/app/features/locations/pages/location-detail/location-detail.component.html -->
-<section class="detail-page" *ngIf="!loading && location">
-  <a routerLink="/locations" class="back">← Volver</a>
+<section class="location-detail">
+  <a routerLink="/locations" class="back-link">← Volver</a>
 
-  <div class="detail">
-    <h2>{{ location.name }}</h2>
-    <p><strong>Tipo:</strong> {{ location.type }}</p>
-    <p><strong>Dimensión:</strong> {{ location.dimension }}</p>
+  <div *ngIf="loading" class="loader">Cargando localización…</div>
+
+  <div *ngIf="!loading && location">
+    <div class="header">
+      <img
+        [src]="location.image || 'assets/images/locations/placeholder.png'"
+        [alt]="location.name"
+        loading="lazy"
+        (error)="onImageError($event)"
+        class="avatar"
+        width="96"
+        height="96"
+      />
+      <h2>{{ location.name }}</h2>
+    </div>
+
+    <ul class="location-info">
+      <li><strong>Tipo:</strong> {{ location.type }}</li>
+      <li><strong>Dimensión:</strong> {{ location.dimension }}</li>
+      <li><strong>Episodio:</strong> {{ location.episode }}</li>
+      <li><strong>Residentes:</strong> {{ location.residents.length }}</li>
+    </ul>
+
+    <h3>Residentes</h3>
+    <ul class="residents-list">
+      <li *ngFor="let resident of location.residents">
+        {{ resident }}
+      </li>
+    </ul>
   </div>
 </section>
-
-<div *ngIf="loading" class="loader"></div>

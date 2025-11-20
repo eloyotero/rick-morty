@@ -1,0 +1,85 @@
+{
+    "results": [
+      {
+        "id": 1,
+        "name": "Team Alpha",
+        "description": "Exploradores interdimensionales liderados por Rick.",
+        "created": "2025-01-01",
+        "members": ["Rick Sanchez", "Morty Smith"],
+        "image": "assets/images/teams/team-alpha.png"
+      },
+      {
+        "id": 2,
+        "name": "Team Beta",
+        "description": "Defensores de la galaxia con Summer y Beth.",
+        "created": "2025-01-02",
+        "members": ["Summer Smith", "Beth Smith"],
+        "image": "assets/images/teams/team-beta.png"
+      },
+      {
+        "id": 3,
+        "name": "Team Gamma",
+        "description": "Grupo de apoyo con Jerry y aliados.",
+        "created": "2025-01-03",
+        "members": ["Jerry Smith", "Birdperson"],
+        "image": "assets/images/teams/team-gamma.png"
+      },
+      {
+        "id": 4,
+        "name": "Council of Ricks",
+        "description": "Ricks y Mortys desde múltiples dimensiones.",
+        "created": "2017-11-10",
+        "members": ["Simple Rick", "Doofus Rick", "Rick C-137", "Mortys"],
+        "image": "assets/images/teams/council-of-ricks.png"
+      },
+      {
+        "id": 5,
+        "name": "Anatomy Park Crew",
+        "description": "Equipo de operación del parque dentro de Ruben.",
+        "created": "2017-12-01",
+        "members": ["Dr. Xenon Bloom", "Annie", "Staff"],
+        "image": "assets/images/teams/anatomy-park-crew.png"
+      },
+      {
+        "id": 6,
+        "name": "Zigerion Ops",
+        "description": "Tripulación encargada de la simulación para el scam.",
+        "created": "2018-01-05",
+        "members": ["Zigerion Aliens"],
+        "image": "assets/images/teams/zigerion-ops.png"
+      },
+      {
+        "id": 7,
+        "name": "Smith Family",
+        "description": "Núcleo familiar C-137.",
+        "created": "2017-11-01",
+        "members": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
+        "image": "assets/images/teams/smith-family.png"
+      },
+      {
+        "id": 8,
+        "name": "Dreamscape Squad",
+        "description": "Entidades de la dimensión de los sueños.",
+        "created": "2017-11-20",
+        "members": ["Scary Terry", "Mrs. Pancakes"],
+        "image": "assets/images/teams/dreamscape-squad.png"
+      },
+      {
+        "id": 9,
+        "name": "Dog World",
+        "description": "Perros inteligentes liderados por Snuffles.",
+        "created": "2017-11-22",
+        "members": ["Snuffles", "Dog Army"],
+        "image": "assets/images/teams/dog-world.png"
+      },
+      {
+        "id": 10,
+        "name": "Mega-Seed Expedition",
+        "description": "Equipo de exploración en la Dimensión 35-C.",
+        "created": "2017-11-12",
+        "members": ["Rick Sanchez", "Morty Smith", "Creatures"],
+        "image": "assets/images/teams/mega-seed-expedition.png"
+      }
+    ]
+  }
+  

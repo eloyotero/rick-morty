@@ -1,44 +1,10 @@
-/* team-detail.component.scss */
-.detail-page {
-  padding: 2rem;
-  background: #1e1e2f;
-  color: #f0f0f0;
-  min-height: 100vh;
-}
-.back {
-  display: inline-block;
-  margin-bottom: 1rem;
-  color: #ff9800;
-  text-decoration: none;
-}
-.detail {
-  background: #2c2c3e;
-  border-radius: 10px;
-  padding: 1rem;
-  h2 {
-    margin-top: 0;
-    color: #ff9800;
-  }
-  h3 {
-    margin-top: 1rem;
-    color: #4fc3f7;
-  }
-  ul {
-    margin: 0;
-    padding-left: 1.25rem;
-  }
-}
-.loader {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #ff9800;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  margin: 2rem auto;
-  animation: spin 1s linear infinite;
-}
-@keyframes spin {
-  100% {
-    transform: rotate(360deg);
-  }
-}
+.team-detail { padding: 2rem; background: #1e1e1e; color: #eee; }
+.back-link { display: inline-block; margin-bottom: 1rem; color: #90caf9; text-decoration: none; }
+.back-link:hover { text-decoration: underline; }
+.header { display: flex; align-items: center; gap: 1rem; }
+.avatar { width: 96px; height: 96px; object-fit: cover; border-radius: 6px; border: 1px solid #333; background: #111; }
+.info { list-style: none; padding: 0; margin: 1rem 0; }
+.info li { margin: 0.4rem 0; }
+.members-list { list-style: none; padding: 0; margin-top: 1rem; }
+.members-list li { margin: 0.3rem 0; font-size: 0.95rem; color: #ccc; }
+.loader { text-align: center; font-size: 1.2rem; color: #64b5f6; }

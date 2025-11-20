@@ -1,73 +1,40 @@
-// src/app/app.routes.ts
 import { Routes } from '@angular/router';
 
+
+import { CharactersListComponent } from './features/characters/pages/characters-list/characters-list.component';
+import { CharacterDetailComponent } from './features/characters/pages/character-detail/character-detail.component';
+
+
+import { LocationsListComponent } from './features/locations/pages/locations-list/locations-list.component';
+import { LocationDetailComponent } from './features/locations/pages/location-detail/location-detail.component';
+
+
+import { TeamsListComponent } from './features/team/pages/team-list/team-list.component';
+import { TeamDetailComponent } from './features/team/pages/team-detail/team-detail.component';
+
+
+import { EpisodesListComponent } from './features/episodes/episodes-list/episodes-list.component';
+import { EpisodeDetailComponent } from './features/episodes/episode-detail/episode-detail.component';
+
 export const routes: Routes = [
-  { path: '', redirectTo: 'characters', pathMatch: 'full' },
+  { path: '', redirectTo: 'episodes', pathMatch: 'full' },
 
-  // Characters
-  {
-    path: 'characters',
-    loadComponent: () =>
-      import(
-        './features/characters/pages/characters-list/characters-list.component'
-      ).then((m) => m.CharactersListComponent),
-  },
-  {
-    path: 'characters/:id',
-    loadComponent: () =>
-      import(
-        './features/characters/pages/character-detail/character-detail.component'
-      ).then((m) => m.CharacterDetailComponent),
-  },
+ 
+  { path: 'characters', component: CharactersListComponent },
+  { path: 'characters/:id', component: CharacterDetailComponent },
 
-  // Episodes
-  // src/app/app.routes.ts
-  {
-    path: 'episodes',
-    loadComponent: () =>
-      import('./features/episodes/episodes-list/episodes-list.component').then(
-        (m) => m.EpisodesListComponent
-      ),
-  },
-  {
-    path: 'episodes/:id',
-    loadComponent: () =>
-      import(
-        './features/episodes/episode-detail/episode-detail.component'
-      ).then((m) => m.EpisodeDetailComponent),
-  },
+ 
+  { path: 'locations', component: LocationsListComponent },
+  { path: 'locations/:id', component: LocationDetailComponent },
 
-  // Locations
-  {
-    path: 'locations',
-    loadComponent: () =>
-      import(
-        './features/locations/pages/locations-list/locations-list.component'
-      ).then((m) => m.LocationsListComponent),
-  },
-  {
-    path: 'locations/:id',
-    loadComponent: () =>
-      import(
-        './features/locations/pages/location-detail/location-detail.component'
-      ).then((m) => m.LocationDetailComponent),
-  },
+  
+  { path: 'teams', component: TeamsListComponent },
+  { path: 'teams/:id', component: TeamDetailComponent },
 
-  // Teams (ojo: carpeta es singular "team")
-  {
-    path: 'teams',
-    loadComponent: () =>
-      import('./features/team/pages/team-list/team-list.component').then(
-        (m) => m.TeamsListComponent
-      ),
-  },
-  {
-    path: 'teams/:id',
-    loadComponent: () =>
-      import('./features/team/pages/team-detail/team-detail.component').then(
-        (m) => m.TeamDetailComponent
-      ),
-  },
+  
+  { path: 'episodes', component: EpisodesListComponent },
+  { path: 'episodes/:code', component: EpisodeDetailComponent },
 
-  { path: '**', redirectTo: 'characters' },
+
+  { path: '**', redirectTo: 'episodes' }
 ];

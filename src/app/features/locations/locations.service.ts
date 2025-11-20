@@ -1,28 +1,31 @@
 // src/app/features/locations/locations.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { map, Observable } from 'rxjs';
 
-export interface Location {
+export interface LocationItem {
   id: number;
   name: string;
   type: string;
   dimension: string;
+  episode?: string;
+  residents: string[];
+  image?: string; // imagen opcional
 }
 
 @Injectable({ providedIn: 'root' })
 export class LocationsService {
-  private apiUrl = 'https://rickandmortyapi.com/api/location';
-
   constructor(private http: HttpClient) {}
 
-  getLocations(page = 1): Observable<{ results: Location[] }> {
-    return this.http.get<{ results: Location[] }>(
-      `${this.apiUrl}?page=${page}`
+  getAllLocations(): Observable<{ results: LocationItem[] }> {
+    return this.http.get<{ results: LocationItem[] }>('/assets/locations.json').pipe(
+      map(data => ({
+        results: (data.results ?? []).sort((a, b) => a.id - b.id)
+      }))
     );
   }
 
-  getLocation(id: number): Observable<Location> {
-    return this.http.get<Location>(`${this.apiUrl}/${id}`);
+  getLocation(id: number): Observable<LocationItem | undefined> {
+    return this.getAllLocations().pipe(map(d => d.results.find(l => l.id === id)));
   }
 }
