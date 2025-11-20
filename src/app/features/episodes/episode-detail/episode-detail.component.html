@@ -1,10 +1,15 @@
-<section class="episode-detail" *ngIf="episode">
+<section class="episode-detail" *ngIf="episode() as ep">
   <button (click)="back()" class="btn-accent">← Volver</button>
 
-  <h1>{{ episode.name }}</h1>
-  <p><strong>Fecha:</strong> {{ episode.air_date }}</p>
-  <p><strong>Código:</strong> {{ episode.episode }}</p>
+  <img [src]="imagePath(ep.image)" (error)="onImageError($event)" alt="{{ ep.title }}" />
+  <h1>{{ ep.title }} <small>({{ ep.code }})</small></h1>
 
   <h3>Personajes</h3>
-  <ul><li *ngFor="let c of episode.characters">{{ c }}</li></ul>
+  <ul><li *ngFor="let c of ep.characters">{{ c }}</li></ul>
+
+  <h3>Localizaciones</h3>
+  <ul><li *ngFor="let l of ep.locations">{{ l }}</li></ul>
+
+  <h3>Equipos</h3>
+  <ul><li *ngFor="let t of ep.teams">{{ t }}</li></ul>
 </section>

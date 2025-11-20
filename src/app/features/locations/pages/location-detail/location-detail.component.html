@@ -1,34 +1,20 @@
-<section class="location-detail">
-  <a routerLink="/locations" class="back-link">← Volver</a>
+<section class="detail-page" *ngIf="location() as loc">
+  <button (click)="back()" class="btn-accent">← Volver</button>
 
-  <div *ngIf="loading" class="loader">Cargando localización…</div>
+  <img
+    [src]="imagePath(loc.image)"
+    (error)="onImageError($event)"
+    alt="{{ loc.name }}"
+    loading="lazy"
+    width="240"
+    height="240"
+  />
 
-  <div *ngIf="!loading && location">
-    <div class="header">
-      <img
-        [src]="location.image || 'assets/images/locations/placeholder.png'"
-        [alt]="location.name"
-        loading="lazy"
-        (error)="onImageError($event)"
-        class="avatar"
-        width="96"
-        height="96"
-      />
-      <h2>{{ location.name }}</h2>
-    </div>
+  <h1>{{ loc.name }}</h1>
+  <p>{{ loc.description }}</p>
 
-    <ul class="location-info">
-      <li><strong>Tipo:</strong> {{ location.type }}</li>
-      <li><strong>Dimensión:</strong> {{ location.dimension }}</li>
-      <li><strong>Episodio:</strong> {{ location.episode }}</li>
-      <li><strong>Residentes:</strong> {{ location.residents.length }}</li>
-    </ul>
-
-    <h3>Residentes</h3>
-    <ul class="residents-list">
-      <li *ngFor="let resident of location.residents">
-        {{ resident }}
-      </li>
-    </ul>
-  </div>
+  <h3>Episodios</h3>
+  <ul>
+    <li *ngFor="let ep of loc.episodes">{{ ep }}</li>
+  </ul>
 </section>

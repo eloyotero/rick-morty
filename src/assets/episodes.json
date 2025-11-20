@@ -1,126 +1,184 @@
 {
-    "results": [
-        {
-            "code": "S01E01",
-            "title": "Pilot",
-            "date": "December 2, 2013",
-            "image": "assets/images/episodes/s01e01.png"
-          },
-          
-      {
-        "code": "S01E02",
-        "title": "Lawnmower Dog",
-        "date": "December 9, 2013",
-        "image": "assets/images/episodes/s01e02.png"
-      },
-      {
-        "code": "S01E03",
-        "title": "Anatomy Park",
-        "date": "December 16, 2013",
-        "image": "assets/images/episodes/s01e03.png"
-      },
-      {
-        "code": "S01E04",
-        "title": "M. Night Shaym-Aliens!",
-        "date": "January 13, 2014",
-        "image": "assets/images/episodes/s01e04.png"
-      },
-      {
-        "code": "S01E05",
-        "title": "Meeseeks and Destroy",
-        "date": "January 20, 2014",
-        "image": "assets/images/episodes/s01e05.png"
-      },
-      {
-        "code": "S01E06",
-        "title": "Rick Potion #9",
-        "date": "January 27, 2014",
-        "image": "assets/images/episodes/s01e06.png"
-      },
-      {
-        "code": "S01E07",
-        "title": "Raising Gazorpazorp",
-        "date": "March 10, 2014",
-        "image": "assets/images/episodes/s01e07.png"
-      },
-      {
-        "code": "S01E08",
-        "title": "Rixty Minutes",
-        "date": "March 17, 2014",
-        "image": "assets/images/episodes/s01e08.png"
-      },
-      {
-        "code": "S01E09",
-        "title": "Something Ricked This Way Comes",
-        "date": "March 24, 2014",
-        "image": "assets/images/episodes/s01e09.png"
-      },
-      {
-        "code": "S01E10",
-        "title": "Close Rick-Counters of the Rick Kind",
-        "date": "April 7, 2014",
-        "image": "assets/images/episodes/s01e10.png"
-      },
-      {
-        "code": "S01E11",
-        "title": "Ricksy Business",
-        "date": "April 14, 2014",
-        "image": "assets/images/episodes/s01e11.png"
-      },
-      {
-        "code": "S01E12",
-        "title": "A Rickle in Time",
-        "date": "July 26, 2015",
-        "image": "assets/images/episodes/s01e12.png"
-      },
-      {
-        "code": "S01E13",
-        "title": "Mortynight Run",
-        "date": "August 2, 2015",
-        "image": "assets/images/episodes/s01e13.png"
-      },
-      {
-        "code": "S01E14",
-        "title": "Auto Erotic Assimilation",
-        "date": "August 9, 2015",
-        "image": "assets/images/episodes/s01e14.png"
-      },
-      {
-        "code": "S01E15",
-        "title": "Total Rickall",
-        "date": "August 16, 2015",
-        "image": "assets/images/episodes/s01e15.png"
-      },
-      {
-        "code": "S01E16",
-        "title": "Get Schwifty",
-        "date": "August 23, 2015",
-        "image": "assets/images/episodes/s01e16.png"
-      },
-      {
-        "code": "S01E17",
-        "title": "The Ricks Must Be Crazy",
-        "date": "August 30, 2015",
-        "image": "assets/images/episodes/s01e17.png"
-      },
-      {
-        "code": "S01E18",
-        "title": "Big Trouble in Little Sanchez",
-        "date": "September 13, 2015",
-        "image": "assets/images/episodes/s01e18.png"
-      },
-      {
-        "code": "S01E19",
-        "title": "Interdimensional Cable 2: Tempting Fate",
-        "date": "September 20, 2015",
-        "image": "assets/images/episodes/s01e19.png"
-      },
-      {
-        "code": "S01E20",
-        "title": "Look Who's Purging Now",
-        "date": "September 27, 2015",
-        "image": "assets/images/episodes/s01e20.png"
-      }
-    ]
-  }
-  
+  "results": [
+    {
+      "title": "Pilot",
+      "date": "December 2, 2013",
+      "code": "S01E01",
+      "image": "assets/images/episodes/s01e01.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Beth Smith", "Jerry Smith", "Summer Smith"],
+      "locations": ["Smith Residence", "School", "Dimension C-137"],
+      "teams": ["Smith Family"]
+    },
+    {
+      "title": "Lawnmower Dog",
+      "date": "December 9, 2013",
+      "code": "S01E02",
+      "image": "assets/images/episodes/s01e02.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Snuffles", "Jerry Smith"],
+      "locations": ["Smith Residence", "Dream World", "Dog Planet"],
+      "teams": ["Snuffles' Army"]
+    },
+    {
+      "title": "Anatomy Park",
+      "date": "December 16, 2013",
+      "code": "S01E03",
+      "image": "assets/images/episodes/s01e03.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Annie", "Dr. Xenon Bloom"],
+      "locations": ["Anatomy Park", "Homeless Man's Body", "Smith Residence"],
+      "teams": ["Anatomy Park Staff"]
+    },
+    {
+      "title": "M. Night Shaym-Aliens!",
+      "date": "January 13, 2014",
+      "code": "S01E04",
+      "image": "assets/images/episodes/s01e04.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Jerry Smith", "Zigerion Leader"],
+      "locations": ["Simulation", "Smith Residence"],
+      "teams": ["Zigerion Scammers"]
+    },
+    {
+      "title": "Meeseeks and Destroy",
+      "date": "January 20, 2014",
+      "code": "S01E05",
+      "image": "assets/images/episodes/s01e05.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Mr. Meeseeks", "Beth Smith", "Jerry Smith"],
+      "locations": ["Smith Residence", "Fantasy World"],
+      "teams": ["Meeseeks Collective"]
+    },
+    {
+      "title": "Rick Potion #9",
+      "date": "January 27, 2014",
+      "code": "S01E06",
+      "image": "assets/images/episodes/s01e06.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Jessica", "Principal Vagina"],
+      "locations": ["Smith Residence", "Cronenberg World"],
+      "teams": ["Cronenberg Survivors"]
+    },
+    {
+      "title": "Raising Gazorpazorp",
+      "date": "March 10, 2014",
+      "code": "S01E07",
+      "image": "assets/images/episodes/s01e07.png",
+      "characters": ["Morty Smith", "Rick Sanchez", "Summer Smith", "Gazorpazorpfield"],
+      "locations": ["Gazorpazorp Planet", "Smith Residence"],
+      "teams": ["Gazorpazorp Matriarchy"]
+    },
+    {
+      "title": "Rixty Minutes",
+      "date": "March 17, 2014",
+      "code": "S01E08",
+      "image": "assets/images/episodes/s01e08.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Beth Smith", "Jerry Smith", "Summer Smith"],
+      "locations": ["Smith Residence", "Interdimensional TV"],
+      "teams": ["Smith Family"]
+    },
+    {
+      "title": "Something Ricked This Way Comes",
+      "date": "March 24, 2014",
+      "code": "S01E09",
+      "image": "assets/images/episodes/s01e09.png",
+      "characters": ["Rick Sanchez", "Summer Smith", "Lucius Needful"],
+      "locations": ["Needful Things Shop", "Smith Residence"],
+      "teams": ["Smith Family"]
+    },
+    {
+      "title": "Close Rick-Counters of the Rick Kind",
+      "date": "April 7, 2014",
+      "code": "S01E10",
+      "image": "assets/images/episodes/s01e10.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Evil Morty", "Council of Ricks"],
+      "locations": ["Citadel of Ricks", "Dimension C-137"],
+      "teams": ["Council of Ricks"]
+    },
+    {
+      "title": "Ricksy Business",
+      "date": "April 14, 2014",
+      "code": "S01E11",
+      "image": "assets/images/episodes/s01e11.png",
+      "characters": ["Rick Sanchez", "Summer Smith", "Abradolf Lincler", "Birdperson"],
+      "locations": ["Smith Residence", "Party Dimension"],
+      "teams": ["Party Guests"]
+    },
+    {
+      "title": "A Rickle in Time",
+      "date": "July 26, 2015",
+      "code": "S01E12",
+      "image": "assets/images/episodes/s01e12.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Time Cops"],
+      "locations": ["Frozen Time Space", "Smith Residence"],
+      "teams": ["Time Enforcement Agency"]
+    },
+    {
+      "title": "Mortynight Run",
+      "date": "August 2, 2015",
+      "code": "S01E13",
+      "image": "assets/images/episodes/s01e13.png",
+      "characters": ["Morty Smith", "Rick Sanchez", "Fart", "Krombopulos Michael"],
+      "locations": ["Blips and Chitz", "Alien Planet"],
+      "teams": ["Galactic Federation"]
+    },
+    {
+      "title": "Auto Erotic Assimilation",
+      "date": "August 9, 2015",
+      "code": "S01E14",
+      "image": "assets/images/episodes/s01e14.png",
+      "characters": ["Rick Sanchez", "Unity", "Beth Smith", "Jerry Smith"],
+      "locations": ["Unity Planet", "Smith Residence"],
+      "teams": ["Unity Collective"]
+    },
+    {
+      "title": "Total Rickall",
+      "date": "August 16, 2015",
+      "code": "S01E15",
+      "image": "assets/images/episodes/s01e15.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Beth Smith", "Jerry Smith", "Summer Smith"],
+      "locations": ["Smith Residence"],
+      "teams": ["Smith Family"]
+    },
+    {
+      "title": "Get Schwifty",
+      "date": "August 23, 2015",
+      "code": "S01E16",
+      "image": "assets/images/episodes/s01e16.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "President of Earth", "Ice-T"],
+      "locations": ["Earth", "Cromulon Dimension"],
+      "teams": ["Planet Music Performers"]
+    },
+    {
+      "title": "The Ricks Must Be Crazy",
+      "date": "August 30, 2015",
+      "code": "S01E17",
+      "image": "assets/images/episodes/s01e17.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Zeep Xanflorp"],
+      "locations": ["Microverse", "Smith Residence"],
+      "teams": ["Microverse Engineers"]
+    },
+    {
+      "title": "Big Trouble in Little Sanchez",
+      "date": "September 13, 2015",
+      "code": "S01E18",
+      "image": "assets/images/episodes/s01e18.png",
+      "characters": ["Tiny Rick", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
+      "locations": ["School", "Smith Residence"],
+      "teams": ["Smith Family"]
+    },
+    {
+      "title": "Interdimensional Cable 2: Tempting Fate",
+      "date": "September 20, 2015",
+      "code": "S01E19",
+      "image": "assets/images/episodes/s01e19.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Jerry Smith", "Shrimply Pibbles"],
+      "locations": ["Interdimensional Hospital", "Smith Residence"],
+      "teams": ["Galactic Doctors"]
+    },
+    {
+      "title": "Look Who's Purging Now",
+      "date": "September 27, 2015",
+      "code": "S01E20",
+      "image": "assets/images/episodes/s01e20.png",
+      "characters": ["Rick Sanchez", "Morty Smith", "Birdperson", "Tammy"],
+      "locations": ["Alien Planet", "Smith Residence"],
+      "teams": ["Purge Participants"]
+    }
+  ]
+}

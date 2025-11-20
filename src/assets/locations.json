@@ -1,187 +1,109 @@
 {
   "results": [
     {
-      "id": 101,
-      "name": "Earth (C-137)",
-      "type": "Planet",
-      "dimension": "Dimension C-137",
-      "episode": "S01E01",
-      "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
-      "image": "earth-c137.png"
-    },
-    {
-      "id": 102,
-      "name": "Harry Herpson High School",
-      "type": "School",
-      "dimension": "Dimension C-137",
-      "episode": "S01E01",
-      "residents": ["Morty Smith", "Jessica", "Sr. Goldenfold"],
-      "image": "harry-herpson-high-school.png"
-    },
-    {
-      "id": 103,
-      "name": "Smith Family House",
-      "type": "House",
-      "dimension": "Dimension C-137",
-      "episode": "S01E01",
-      "residents": ["Rick Sanchez", "Morty Smith", "Summer Smith", "Beth Smith", "Jerry Smith"],
-      "image": "smith-family-house.png"
-    },
-    {
-      "id": 104,
-      "name": "Dimension 35-C",
-      "type": "Parallel dimension",
-      "dimension": "Dimension 35-C",
-      "episode": "S01E01",
-      "residents": ["Megaseed Tree Creatures"],
-      "image": "dimension-35c.png"
-    },
-    {
-      "id": 105,
-      "name": "Mega-Tree Forest (35-C)",
-      "type": "Forest",
-      "dimension": "Dimension 35-C",
-      "episode": "S01E01",
-      "residents": ["Megaseed Tree Creatures"],
-      "image": "mega-tree-forest-35c.png"
-    },
-
-    {
-      "id": 201,
-      "name": "Smith Family Bedroom",
-      "type": "Room",
-      "dimension": "Dimension C-137",
-      "episode": "S01E02",
-      "residents": ["Morty Smith", "Snuffles"],
-      "image": "smith-family-bedroom.png"
-    },
-    {
-      "id": 202,
-      "name": "Snuffles’ Dog World",
-      "type": "Alternate reality",
-      "dimension": "Unknown",
-      "episode": "S01E02",
-      "residents": ["Snuffles", "Dog Army"],
-      "image": "snuffles-dog-world.png"
-    },
-    {
-      "id": 203,
-      "name": "Mrs. Pancakes’ Apartment (Dream)",
-      "type": "Dream location",
-      "dimension": "Dream realm",
-      "episode": "S01E02",
-      "residents": ["Mrs. Pancakes"],
-      "image": "mrs-pancakes-apartment-dream.png"
-    },
-    {
-      "id": 204,
-      "name": "Scary Terry’s Dreamscape",
-      "type": "Dream realm",
-      "dimension": "Dream realm",
-      "episode": "S01E02",
-      "residents": ["Scary Terry"],
-      "image": "scary-terry-dreamscape.png"
-    },
-    {
-      "id": 205,
-      "name": "Classroom Dream (Layers)",
-      "type": "Dream location",
-      "dimension": "Dream realm",
-      "episode": "S01E02",
-      "residents": ["Students (Dream)", "Mr. Goldenfold (Dream)"],
-      "image": "classroom-dream-layers.png"
-    },
-
-    {
-      "id": 301,
       "name": "Anatomy Park (Inside Ruben)",
-      "type": "Micro-park",
-      "dimension": "Inside body",
-      "episode": "S01E03",
-      "residents": ["Dr. Xenon Bloom", "Annie", "Park Staff"],
-      "image": "anatomy-park-inside-ruben.png"
+      "image": "assets/images/locations/anatomy-park-inside-ruben.png",
+      "episodes": ["S01E03"],
+      "teams": ["Anatomy Park Staff"]
     },
     {
-      "id": 302,
-      "name": "Ruben’s Body",
-      "type": "Human body",
-      "dimension": "Inside body",
-      "episode": "S01E03",
-      "residents": ["Microbes", "Anatomy Park Staff"],
-      "image": "rubens-body.png"
+      "name": "Classroom Dream Layers",
+      "image": "assets/images/locations/classroom-dream-layers.png",
+      "episodes": ["S01E02"],
+      "teams": []
     },
     {
-      "id": 303,
-      "name": "Pirates of the Pancreas",
-      "type": "Theme ride",
-      "dimension": "Inside body",
-      "episode": "S01E03",
-      "residents": ["Park Visitors"],
-      "image": "pirates-of-the-pancreas.png"
+      "name": "Dimension 35-C",
+      "image": "assets/images/locations/dimension-35c.png",
+      "episodes": ["S01E06"],
+      "teams": []
     },
     {
-      "id": 304,
-      "name": "Spleen Mountain",
-      "type": "Theme area",
-      "dimension": "Inside body",
-      "episode": "S01E03",
-      "residents": ["Park Visitors"],
-      "image": "spleen-mountain.png"
+      "name": "Earth (C-137)",
+      "image": "assets/images/locations/earth-c137.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E04","S01E05","S01E06","S01E07","S01E08","S01E09","S01E10","S01E11"],
+      "teams": ["Smith Family"]
     },
     {
-      "id": 305,
+      "name": "Harry Herpson High School",
+      "image": "assets/images/locations/harry-herpson-high-school.png",
+      "episodes": ["S01E01","S01E06","S01E08"],
+      "teams": []
+    },
+    {
       "name": "Liver Lagoon",
-      "type": "Theme area",
-      "dimension": "Inside body",
-      "episode": "S01E03",
-      "residents": ["Park Visitors"],
-      "image": "liver-lagoon.png"
+      "image": "assets/images/locations/liver-lagoon.png",
+      "episodes": ["S01E03"],
+      "teams": ["Anatomy Park Staff"]
     },
     {
-      "id": 306,
-      "name": "Stomach Central",
-      "type": "Theme area",
-      "dimension": "Inside body",
-      "episode": "S01E03",
-      "residents": ["Park Visitors"],
-      "image": "stomach-central.png"
-    },
-
-    {
-      "id": 401,
-      "name": "Zigerion Ship",
-      "type": "Alien spaceship",
-      "dimension": "Unknown",
-      "episode": "S01E04",
-      "residents": ["Zigerion Aliens", "Rick Sanchez", "Jerry Smith"],
-      "image": "zigerion-ship.png"
+      "name": "Mega Tree Forest (35-C)",
+      "image": "assets/images/locations/mega-tree-forest-35c.png",
+      "episodes": ["S01E06"],
+      "teams": []
     },
     {
-      "id": 402,
-      "name": "Simulation Layer (Earth replica)",
-      "type": "Simulation",
-      "dimension": "Zigerion ship",
-      "episode": "S01E04",
-      "residents": ["Simulation NPCs", "Rick Sanchez", "Jerry Smith"],
-      "image": "simulation-layer-earth-replica.png"
+      "name": "Pirates of the Pancakes",
+      "image": "assets/images/locations/pirates-of-the-pancreas.png",
+      "episodes": ["S01E02"],
+      "teams": []
     },
     {
-      "id": 403,
-      "name": "Rick’s Garage (Simulated)",
-      "type": "Garage (simulation)",
-      "dimension": "Zigerion ship",
-      "episode": "S01E04",
-      "residents": ["Simulation NPCs", "Rick Sanchez"],
-      "image": "ricks-garage-simulated.png"
+      "name": "Rick's Garage (Simulated)",
+      "image": "assets/images/locations/ricks-garage-simulated.png",
+      "episodes": ["S01E04"],
+      "teams": []
     },
     {
-      "id": 404,
+      "name": "RS Pancakes Apartment (Dream)",
+      "image": "assets/images/locations/rs-pancakes-apartment-dream.png",
+      "episodes": ["S01E02"],
+      "teams": []
+    },
+    {
+      "name": "Ruben's Body",
+      "image": "assets/images/locations/rubens-body.png",
+      "episodes": ["S01E03"],
+      "teams": ["Anatomy Park Staff"]
+    },
+    
+    
+    {
+      "name": "Smith Family Bedroom",
+      "image": "assets/images/locations/smith-family-bedroom.png",
+      "episodes": ["S01E01","S01E02","S01E06"],
+      "teams": ["Smith Family"]
+    },
+    {
       "name": "Smith Family House (Simulated)",
-      "type": "House (simulation)",
-      "dimension": "Zigerion ship",
-      "episode": "S01E04",
-      "residents": ["Simulation NPCs", "Jerry Smith"],
-      "image": "smith-family-house-simulated.png"
+      "image": "assets/images/locations/smith-family-house-simulated.png",
+      "episodes": ["S01E04"],
+      "teams": ["Zigerion Scammers"]
+    },
+    {
+      "name": "Smith Family House",
+      "image": "assets/images/locations/smith-family-house.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E05","S01E06","S01E08","S01E11"],
+      "teams": ["Smith Family"]
+    },
+    {
+      "name": "Spleens Dog World",
+      "image": "assets/images/locations/snuffles-dog-world.png",
+      "episodes": ["S01E02"],
+      "teams": ["Snuffles' Army"]
+    },
+    {
+      "name": "Spleen Mountain",
+      "image": "assets/images/locations/spleen-mountain.png",
+      "episodes": ["S01E03"],
+      "teams": ["Anatomy Park Staff"]
+    },
+    {
+      "name": "Stomach Central",
+      "image": "assets/images/locations/stomach-central.png",
+      "episodes": ["S01E03"],
+      "teams": ["Anatomy Park Staff"]
     }
+  
   ]
 }

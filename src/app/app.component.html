@@ -1,17 +1,12 @@
-<div class="app-layout">
-  
-  <aside class="sidebar">
-    <h2 class="sidebar-title">Rick & Morty</h2>
-    <nav class="sidebar-nav">
-      <a routerLink="/episodes" routerLinkActive="active">Episodes</a>
-      <a routerLink="/characters" routerLinkActive="active">Characters</a>
-      <a routerLink="/locations" routerLinkActive="active">Locations</a>
-      <a routerLink="/teams" routerLinkActive="active">Teams</a>
-    </nav>
-  </aside>
+<header class="main-nav">
+  <nav>
+    <a routerLink="/characters" routerLinkActive="active">Personajes</a>
+    <a routerLink="/episodes" routerLinkActive="active">Episodios</a>
+    <a routerLink="/locations" routerLinkActive="active">Localizaciones</a>
+    <a routerLink="/teams" routerLinkActive="active">Equipos</a>
+  </nav>
+</header>
 
-
-  <main class="main-content">
-    <router-outlet></router-outlet>
-  </main>
-</div>
+<main class="main-content">
+  <router-outlet></router-outlet>
+</main>

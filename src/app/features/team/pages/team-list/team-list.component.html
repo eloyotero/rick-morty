@@ -1,27 +1,33 @@
-<section class="teams-grid-page">
-  <h2>Equipos</h2>
+<section class="list-page">
+  <h1>Equipos</h1>
 
-  <div *ngIf="loading" class="loader">Cargando equipos…</div>
+  <!-- Buscador -->
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Buscar equipo..."
+    class="search-box"
+  />
 
-  <div class="grid" *ngIf="!loading">
-    <div class="card" *ngFor="let team of pageItems()">
-      <img
-        [src]="imagePath(team.image)"
-        (error)="onImageError($event)"
-        alt="{{ team.name }}"
-      />
-      <h3>{{ team.name }}</h3>
-      <a
-        [routerLink]="['/teams', team.id]"
-        [queryParams]="{ page: page }"
-        class="btn-accent"
-      >Ver equipo</a>
-    </div>
-  </div>
+  <!-- Lista paginada -->
+  <ul>
+    <li *ngFor="let t of filteredTeams()">
+      <a [routerLink]="['/teams', t.id]" [queryParams]="{ page: currentPage }">
+        <img
+          [src]="imagePath(t.image)"
+          (error)="onImageError($event)"
+          alt="{{ t.name }}"
+          loading="lazy"
+        />
+        <span>{{ t.name }}</span>
+      </a>
+    </li>
+  </ul>
 
-  <div class="pager">
-    <button (click)="prevPage()" [disabled]="page === 1" class="btn-accent">←</button>
-    <span>Página {{ page }} de {{ totalPages }}</span>
-    <button (click)="nextPage()" [disabled]="page === totalPages" class="btn-accent">→</button>
+  <!-- Paginación -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
   </div>
 </section>

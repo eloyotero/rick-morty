@@ -1,31 +1,33 @@
-<section class="locations-list">
-  <header class="section-header">
-    <h2>Localizaciones</h2>
-  </header>
+<section class="list-page">
+  <h1>Localizaciones</h1>
 
-  <div class="locations-container">
-    <div *ngFor="let loc of locations()" class="location-card">
-      <div class="avatar-wrap">
+  <!-- Buscador -->
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Buscar localización..."
+    class="search-box"
+  />
+
+  <!-- Lista paginada -->
+  <ul>
+    <li *ngFor="let loc of filteredLocations()">
+      <a [routerLink]="['/locations', loc.id]" [queryParams]="{ page: currentPage }">
         <img
-          [src]="'assets/images/locations/' + (loc.image || 'placeholder.png')"
-          [alt]="loc.name"
-          class="location-thumb"
-          loading="lazy"
+          [src]="imagePath(loc.image)"
           (error)="onImageError($event)"
+          alt="{{ loc.name }}"
+          loading="lazy"
         />
-      </div>
+        <span>{{ loc.name }}</span>
+      </a>
+    </li>
+  </ul>
 
-      <div class="location-content">
-        <h3 class="name">{{ loc.name }}</h3>
-        <p><strong>Tipo:</strong> {{ loc.type }}</p>
-        <p><strong>Dimensión:</strong> {{ loc.dimension }}</p>
-        <p><strong>Episodio:</strong> {{ loc.episode }}</p>
-        <p><strong>Residentes:</strong> {{ loc.residents.length }}</p>
-
-        <button [routerLink]="['/locations', loc.id]" class="btn">
-          Ver detalle
-        </button>
-      </div>
-    </div>
+  <!-- Paginación -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
   </div>
 </section>

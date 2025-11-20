@@ -1,16 +1,24 @@
-<section class="team-detail" *ngIf="team">
+<section class="detail-page" *ngIf="team() as t">
   <button (click)="back()" class="btn-accent">← Volver</button>
 
   <img
-    [src]="imagePath(team.image)"
+    [src]="imagePath(t.image)"
     (error)="onImageError($event)"
-    alt="{{ team.name }}"
+    alt="{{ t.name }}"
+    loading="lazy"
+    width="240"
+    height="240"
   />
 
-  <h1>{{ team.name }}</h1>
-  <p>{{ team.description }}</p>
-  <p *ngIf="team.created"><strong>Creado:</strong> {{ team.created }}</p>
+  <h1>{{ t.name }}</h1>
 
   <h3>Miembros</h3>
-  <ul><li *ngFor="let m of team.members">{{ m }}</li></ul>
+  <ul>
+    <li *ngFor="let m of t.members">{{ m }}</li>
+  </ul>
+
+  <h3>Episodios</h3>
+  <ul>
+    <li *ngFor="let ep of t.episodes">{{ ep }}</li>
+  </ul>
 </section>

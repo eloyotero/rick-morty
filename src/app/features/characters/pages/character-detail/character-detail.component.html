@@ -1,23 +1,20 @@
+<section class="detail-page" *ngIf="character() as ch">
+  <button (click)="back()" class="btn-accent">← Volver</button>
 
-<section class="character-detail">
-  <a routerLink="/characters" class="back-link">← Volver</a>
+  <img
+    [src]="imagePath(ch.image)"
+    (error)="onImageError($event)"
+    alt="{{ ch.name }}"
+    loading="lazy"
+    width="240"
+    height="240"
+  />
 
-  <div *ngIf="loading" class="loader">Cargando personaje…</div>
+  <h1>{{ ch.name }}</h1>
+  <p>{{ ch.description }}</p>
 
-  <div *ngIf="!loading && character">
-    <div class="header">
-      <img *ngIf="character.image" [src]="character.image" [alt]="character.name" class="avatar" />
-      <h2>{{ character.name }}</h2>
-    </div>
-
-    <ul class="info">
-      <li><strong>Estado:</strong> {{ character.status }}</li>
-      <li><strong>Especie:</strong> {{ character.species }}</li>
-      <li><strong>Tipo:</strong> {{ character.type || '—' }}</li>
-      <li><strong>Género:</strong> {{ character.gender }}</li>
-      <li><strong>Origen:</strong> {{ character.origin }}</li>
-      <li><strong>Ubicación:</strong> {{ character.location }}</li>
-      <li><strong>Episodios:</strong> {{ character.episode.join(', ') }}</li>
-    </ul>
-  </div>
+  <h3>Episodios</h3>
+  <ul>
+    <li *ngFor="let ep of ch.episodes">{{ ep }}</li>
+  </ul>
 </section>

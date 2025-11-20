@@ -1,21 +1,30 @@
-<section class="episodes-grid-page">
+
+<section class="grid-page">
   <h2>Episodios</h2>
 
-  <div *ngIf="loading" class="loader">Cargando episodios…</div>
+  <input
+    type="text"
+    placeholder="Buscar episodio..."
+    [ngModel]="searchTerm()"
+    (ngModelChange)="searchTerm.set($event)"
+    class="search-bar"
+  />
 
-  <div class="grid" *ngIf="!loading">
-    <div class="card" *ngFor="let ep of pageItems()">
-      <h3>{{ ep.name }}</h3>
-      <p><strong>Fecha:</strong> {{ ep.air_date }}</p>
-      <p><strong>Código:</strong> {{ ep.episode }}</p>
-      <a [routerLink]="['/episodes', ep.id]" [queryParams]="{ page: page }" class="btn-accent">Ver episodio</a>
+  <div *ngIf="loading()">Cargando episodios…</div>
+
+  <div class="grid" *ngIf="!loading()">
+    <div class="card" *ngFor="let ep of pageItems(); trackBy: trackById">
+      <img [src]="imagePath(ep.image)" (error)="onImageError($event)" alt="{{ ep.title }}" />
+      <h3>{{ ep.title }} ({{ ep.code }})</h3>
+      <a [routerLink]="['/episodes', ep.id]" [queryParams]="{ page: page() }" class="btn-accent">
+        Ver detalle
+      </a>
     </div>
   </div>
 
   <div class="pagination-bar">
-    <button (click)="prevPage()" [disabled]="page === 1" class="btn-accent">Anterior</button>
-    <span>Página {{ page }} de {{ totalPages }} ({{ totalItems }} {{ labelPlural }})</span>
-    <button (click)="nextPage()" [disabled]="page === totalPages" class="btn-accent">Siguiente</button>
+    <button (click)="prevPage()" [disabled]="page() === 1" class="btn-accent">← Anterior</button>
+    <span>Página {{ page() }} de {{ totalPages() }}</span>
+    <button (click)="nextPage()" [disabled]="page() === totalPages()" class="btn-accent">Siguiente →</button>
   </div>
 </section>
-

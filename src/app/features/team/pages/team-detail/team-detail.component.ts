@@ -1,49 +1,68 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ActivatedRoute, Router, RouterModule } from '@angular/router';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
 
-interface Team {
+interface TeamDetail {
   id: number;
   name: string;
-  description?: string;
-  members?: string[];
   image: string;
-  created?: string;
+  members: string[];
+  episodes: string[];
 }
 
 @Component({
   selector: 'app-team-detail',
   standalone: true,
-  imports: [CommonModule, RouterModule, HttpClientModule],
+  imports: [CommonModule, RouterModule],
   templateUrl: './team-detail.component.html',
   styleUrls: ['./team-detail.component.scss']
 })
 export class TeamDetailComponent implements OnInit {
-  team: Team | null = null;
-  returnPage = 1;
+  team = signal<TeamDetail | null>(null);
+  returnPage = signal(1);
 
-  constructor(private route: ActivatedRoute, private http: HttpClient, private router: Router) {}
+  constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit() {
-    const id = +this.route.snapshot.paramMap.get('id')!;
-    this.returnPage = +(this.route.snapshot.queryParamMap.get('page') || 1);
+    const id = Number(this.route.snapshot.paramMap.get('id'));
+    this.returnPage.set(Number(this.route.snapshot.queryParamMap.get('page') ?? 1));
 
-    this.http.get<any>('assets/teams.json').subscribe(res => {
-      const list = res.results || res;
-      this.team = list.find((t: any) => t.id === id) || null;
-    });
+    fetch('assets/teams.json')
+      .then(res => res.json())
+      .then(data => {
+        const list = Array.isArray(data) ? data : data.results || [];
+        const found = list[id - 1];
+        if (found) {
+          this.team.set({
+            id,
+            name: String(found.name ?? 'Sin nombre'),
+            image: String(found.image ?? ''),
+            members: Array.isArray(found.members) ? found.members.map(String) : [],
+            episodes: Array.isArray(found.episodes) ? found.episodes.map(String) : []
+          });
+        }
+      })
+      .catch(err => console.error('Error cargando equipo:', err));
   }
 
   back() {
-    this.router.navigate(['/teams'], { queryParams: { page: this.returnPage } });
+    this.router.navigate(['/teams'], { queryParams: { page: this.returnPage() } });
   }
 
-  imagePath(filename: string): string {
-    return filename.startsWith('assets/') ? filename : 'assets/images/teams/' + filename;
+  imagePath(path: string): string {
+    const p = String(path ?? '').trim();
+    if (!p) return 'assets/images/teams/placeholder.png';
+    const normalized = p.replace(/\\/g, '/').replace(/\s+/g, '%20');
+    if (!/^assets\//.test(normalized)) {
+      return `assets/images/teams/${normalized}`;
+    }
+    return normalized;
   }
 
-  onImageError(e: Event) {
-    (e.target as HTMLImageElement).src = 'assets/images/teams/placeholder.png';
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    if (img.dataset['fallbackSet'] === 'true') return;
+    img.src = 'assets/images/teams/placeholder.png';
+    img.dataset['fallbackSet'] = 'true';
   }
 }

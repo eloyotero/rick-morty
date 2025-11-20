@@ -1,400 +1,188 @@
 {
   "results": [
     {
-      "id": 1,
       "name": "Rick Sanchez",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "rick-sanchez.png"
+      "image": "assets/images/characters/rick-sanchez.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E04","S01E05","S01E06","S01E07","S01E08","S01E09","S01E10","S01E11"],
+      "locations": ["Earth","Citadel of Ricks","Anatomy Park"],
+      "teams": ["Smith Family","Council of Ricks"]
     },
     {
-      "id": 2,
       "name": "Morty Smith",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "morty-smith.png"
+      "image": "assets/images/characters/morty-smith.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E04","S01E05","S01E06","S01E07","S01E08","S01E09","S01E10","S01E11"],
+      "locations": ["Earth","School"],
+      "teams": ["Smith Family"]
     },
     {
-      "id": 3,
       "name": "Summer Smith",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "summer-smith.png"
+      "image": "assets/images/characters/summer-smith.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E04","S01E05","S01E06","S01E07","S01E08","S01E09","S01E10","S01E11"],
+      "locations": ["Earth","School"],
+      "teams": ["Smith Family"]
     },
     {
-      "id": 4,
       "name": "Beth Smith",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "beth-smith.png"
+      "image": "assets/images/characters/beth-smith.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E04","S01E05","S01E06","S01E07","S01E08","S01E09","S01E10","S01E11"],
+      "locations": ["Earth","Anatomy Park"],
+      "teams": ["Smith Family"]
     },
     {
-      "id": 5,
       "name": "Jerry Smith",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "jerry-smith.png"
-    },
-
-    {
-      "id": 6,
-      "name": "Mr. Goldenfold",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "mr-goldenfold.png"
+      "image": "assets/images/characters/jerry-smith.png",
+      "episodes": ["S01E01","S01E02","S01E03","S01E04","S01E05","S01E06","S01E07","S01E08","S01E09","S01E10","S01E11"],
+      "locations": ["Earth","Simulation"],
+      "teams": ["Smith Family"]
     },
     {
-      "id": 7,
-      "name": "Jessica",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Earth (C-137)",
-      "episode": "S01E01",
-      "image": "jessica.png"
-    },
-    {
-      "id": 8,
-      "name": "Principal Vagina",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E05",
-      "image": "principal-vagina.png"
-    },
-    {
-      "id": 9,
-      "name": "Snuffles",
-      "status": "Alive",
-      "species": "Dog",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E02",
-      "image": "snuffles.png"
-    },
-    {
-      "id": 10,
-      "name": "Scary Terry",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Dream Realm",
-      "episode": "S01E02",
-      "image": "scary-terry.png"
-    },
-
-    {
-      "id": 11,
-      "name": "Mrs. Pancakes",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Dream Realm",
-      "episode": "S01E02",
-      "image": "mrs-pancakes.png"
-    },
-    {
-      "id": 12,
-      "name": "Dr. Xenon Bloom",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Anatomy Park",
-      "episode": "S01E03",
-      "image": "dr-xenon-bloom.png"
-    },
-    {
-      "id": 13,
-      "name": "Annie",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Anatomy Park",
-      "episode": "S01E03",
-      "image": "annie.png"
-    },
-    {
-      "id": 14,
-      "name": "Ruben",
-      "status": "Dead",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E03",
-      "image": "ruben.png"
-    },
-    {
-      "id": 15,
-      "name": "Zigerion Alien",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Zigerion Ship",
-      "episode": "S01E04",
-      "image": "zigerion-alien.png"
-    },
-
-    {
-      "id": 16,
-      "name": "Abadango Cluster Princess",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Female",
-      "origin": "Abadango",
-      "episode": "S01E05",
-      "image": "abadango-cluster-princess.png"
-    },
-    {
-      "id": 17,
-      "name": "Birdperson",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Bird World",
-      "episode": "S01E05",
-      "image": "birdperson.png"
-    },
-    {
-      "id": 18,
-      "name": "Squanchy",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Squanchy Planet",
-      "episode": "S01E10",
-      "image": "squanchy.png"
-    },
-    {
-      "id": 19,
-      "name": "Tammy Guetermann",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Earth (C-137)",
-      "episode": "S01E10",
-      "image": "tammy-guetermann.png"
-    },
-    {
-      "id": 20,
-      "name": "Unity",
-      "status": "Alive",
-      "species": "Hive Mind",
-      "gender": "Unknown",
-      "origin": "Unity Planet",
-      "episode": "S02E03",
-      "image": "unity.png"
-    },
-
-    {
-      "id": 21,
-      "name": "Gearhead",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Gear World",
-      "episode": "S01E09",
-      "image": "gearhead.png"
-    },
-    {
-      "id": 22,
-      "name": "Abradolf Lincler",
-      "status": "Alive",
-      "species": "Genetic Experiment",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S01E10",
-      "image": "abradolf-lincler.png"
-    },
-    {
-      "id": 23,
       "name": "Mr. Meeseeks",
-      "status": "Alive",
-      "species": "Meeseeks",
-      "gender": "Male",
-      "origin": "Unknown",
-      "episode": "S01E05",
-      "image": "mr-meeseeks.png"
+      "image": "assets/images/characters/mr-meeseeks.png",
+      "episodes": ["S01E05"],
+      "locations": ["Earth"],
+      "teams": ["Meeseeks Collective"]
     },
     {
-      "id": 24,
-      "name": "Mr. Poopybutthole",
-      "status": "Alive",
-      "species": "Unknown",
-      "gender": "Male",
-      "origin": "Unknown",
-      "episode": "S02E04",
-      "image": "mr-poopybutthole.png"
+      "name": "Scary Terry",
+      "image": "assets/images/characters/scary-terry.png",
+      "episodes": ["S01E02"],
+      "locations": ["Dream World"],
+      "teams": []
+    },
+    
+    {
+      "name": "Dr. Xenon Bloom",
+      "image": "assets/images/characters/dr-xenon-bloom.png",
+      "episodes": ["S01E03"],
+      "locations": ["Anatomy Park"],
+      "teams": ["Anatomy Park Staff"]
     },
     {
-      "id": 25,
+      "name": "Annie",
+      "image": "assets/images/characters/annie.png",
+      "episodes": ["S01E03"],
+      "locations": ["Anatomy Park"],
+      "teams": ["Anatomy Park Staff"]
+    },
+    {
+      "name": "Ruben",
+      "image": "assets/images/characters/ruben.png",
+      "episodes": ["S01E03"],
+      "locations": ["Anatomy Park"],
+      "teams": []
+    },
+    {
+      "name": "Abradolf Lincler",
+      "image": "assets/images/characters/abradolf-lincler.png",
+      "episodes": ["S01E11"],
+      "locations": ["Earth"],
+      "teams": ["Party Guests"]
+    },
+    {
+      "name": "Birdperson",
+      "image": "assets/images/characters/birdperson.png",
+      "episodes": ["S01E11"],
+      "locations": ["Party Dimension"],
+      "teams": ["Party Guests"]
+    },
+    {
+      "name": "Jessica",
+      "image": "assets/images/characters/jessica.png",
+      "episodes": ["S01E06","S01E08","S01E11"],
+      "locations": ["School"],
+      "teams": []
+    },
+    {
+      "name": "Principal Vagina",
+      "image": "assets/images/characters/principal-vagina.png",
+      "episodes": ["S01E06","S01E08","S01E11"],
+      "locations": ["School"],
+      "teams": []
+    },
+    {
+      "name": "Lucius Needful",
+      "image": "assets/images/characters/mr-needful.png",
+      "episodes": ["S01E09"],
+      "locations": ["Needful Things Shop"],
+      "teams": []
+    },
+    
+    {
+      "name": "Cromulon Giant Head",
+      "image": "assets/images/characters/cromulon-giant-head.png",
+      "episodes": ["S01E08"],
+      "locations": ["Cromulon Dimension"],
+      "teams": []
+    },
+    {
       "name": "Evil Morty",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Unknown",
-      "episode": "S01E10",
-      "image": "evil-morty.png"
-    },
-
-    {
-      "id": 26,
-      "name": "Doofus Rick",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (J19Z7)",
-      "episode": "S01E10",
-      "image": "doofus-rick.png"
+      "image": "assets/images/characters/evil-morty.png",
+      "episodes": ["S01E10"],
+      "locations": ["Citadel of Ricks"],
+      "teams": ["Council of Ricks"]
     },
     {
-      "id": 27,
       "name": "Council Rick",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Citadel of Ricks",
-      "episode": "S01E10",
-      "image": "council-rick.png"
+      "image": "assets/images/characters/council-rick.png",
+      "episodes": ["S01E10"],
+      "locations": ["Citadel of Ricks"],
+      "teams": ["Council of Ricks"]
     },
     {
-      "id": 28,
       "name": "Council Morty",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Citadel of Ricks",
-      "episode": "S01E10",
-      "image": "council-morty.png"
-    },
-
-    {
-      "id": 29,
-      "name": "Ants in My Eyes Johnson",
-      "status": "Unknown",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Interdimensional Cable",
-      "episode": "S01E08",
-      "image": "ants-in-my-eyes-johnson.png"
+      "image": "assets/images/characters/council-morty.png",
+      "episodes": ["S01E10"],
+      "locations": ["Citadel of Ricks"],
+      "teams": ["Council of Ricks"]
     },
     {
-      "id": 30,
-      "name": "Cromulon (Giant Head)",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Unknown",
-      "origin": "Cromulon Dimension",
-      "episode": "S02E05",
-      "image": "cromulon-giant-head.png"
+      "name": "Doofus Rick",
+      "image": "assets/images/characters/doofus-rick.png",
+      "episodes": ["S01E10"],
+      "locations": ["Citadel of Ricks"],
+      "teams": ["Council of Ricks"]
     },
     {
-      "id": 31,
-      "name": "Noob-Noob",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Citadel of Ricks",
-      "episode": "S03E05",
-      "image": "noob-noob.png"
+      "name": "Tammy Guetermann",
+      "image": "assets/images/characters/tammy-guetermann.png",
+      "episodes": ["S01E11"],
+      "locations": ["Earth"],
+      "teams": []
     },
     {
-      "id": 32,
-      "name": "Krombopulos Michael",
-      "status": "Dead",
-      "species": "Gromflomite",
-      "gender": "Male",
-      "origin": "Gromflom Prime",
-      "episode": "S02E02",
-      "image": "krombopulos-michael.png"
-    },
-    {
-      "id": 33,
-      "name": "Mr. Needful",
-      "status": "Alive",
-      "species": "Demon",
-      "gender": "Male",
-      "origin": "Unknown",
-      "episode": "S01E09",
-      "image": "mr-needful.png"
-    },
-    {
-      "id": 34,
-      "name": "Zeep Xanflorp",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Mini-Verse",
-      "episode": "S02E06",
-      "image": "zeep-xanflorp.png"
-    },
-    {
-      "id": 35,
-      "name": "Ethan",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Male",
-      "origin": "Earth (C-137)",
-      "episode": "S02E07",
-      "image": "ethan.png"
-    },
-    {
-      "id": 36,
-      "name": "Nancy",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Earth (C-137)",
-      "episode": "S01E06",
-      "image": "nancy.png"
-    },
-    {
-      "id": 37,
-      "name": "Arthricia",
-      "status": "Alive",
-      "species": "Alien",
-      "gender": "Female",
-      "origin": "Purge Planet",
-      "episode": "S02E09",
-      "image": "arthricia.png"
-    },
-    {
-      "id": 38,
-      "name": "Purge Leader",
-      "status": "Dead",
-      "species": "Alien",
-      "gender": "Male",
-      "origin": "Purge Planet",
-      "episode": "S02E09",
-      "image": "purge-leader.png"
-    },
-    {
-      "id": 39,
       "name": "Tricia Lange",
-      "status": "Alive",
-      "species": "Human",
-      "gender": "Female",
-      "origin": "Earth (C-137)",
-      "episode": "S01E06",
-      "image": "tricia-lange.png"
+      "image": "assets/images/characters/tricia-lange.png",
+      "episodes": ["S01E11"],
+      "locations": ["Earth"],
+      "teams": []
+    },
+    {
+      "name": "Gearhead",
+      "image": "assets/images/characters/gearhead.png",
+      "episodes": ["S01E11"],
+      "locations": ["Party Dimension"],
+      "teams": []
+    },
+    {
+      "name": "Mr. Goldenfold",
+      "image": "assets/images/characters/mr-goldenfold.png",
+      "episodes": ["S01E01","S01E02","S01E06","S01E08"],
+      "locations": ["School"],
+      "teams": []
+    },
+    {
+      "name": "Mrs. Pancakes",
+      "image": "assets/images/characters/mrs-pancakes.png",
+      "episodes": ["S01E02"],
+      "locations": ["Dream World"],
+      "teams": []
+    },
+    {
+      "name": "Ants in My Eyes Johnson",
+      "image": "assets/images/characters/ants-in-my-eyes-johnson.png",
+      "episodes": ["S01E09"],
+      "locations": ["Earth"],
+      "teams": []
     }
   ]
 }

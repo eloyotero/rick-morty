@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, signal } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 
 interface Team {
@@ -10,45 +10,61 @@ interface Team {
 }
 
 @Component({
-  selector: 'app-teams-list',
+  selector: 'app-team-list',
   standalone: true,
-  imports: [CommonModule, HttpClientModule, RouterModule],
+  imports: [CommonModule, FormsModule, RouterModule],
   templateUrl: './team-list.component.html',
   styleUrls: ['./team-list.component.scss']
 })
-export class TeamsListComponent implements OnInit {
-  teams: Team[] = [];
-  loading = true;
-  page = 1;
-  pageSize = 6;
+export class TeamListComponent implements OnInit {
+  teams = signal<Team[]>([]);
+  searchTerm = '';
+  currentPage = 1;
+  pageSize = 12;
+  totalPages = 1;
 
   ngOnInit() {
     fetch('assets/teams.json')
       .then(res => res.json())
       .then(data => {
-        this.teams = data.results || data;
-        this.loading = false;
-      });
+        const list = Array.isArray(data) ? data : data.results || [];
+        this.teams.set(
+          list.map((t: any, i: number) => ({
+            id: i + 1,
+            name: String(t.name ?? 'Sin nombre'),
+            image: String(t.image ?? '')
+          }))
+        );
+        this.totalPages = Math.ceil(this.teams().length / this.pageSize);
+      })
+      .catch(err => console.error('Error cargando equipos:', err));
   }
 
-  get totalPages(): number {
-    return Math.ceil(this.teams.length / this.pageSize);
+  filteredTeams(): Team[] {
+    const term = this.searchTerm.toLowerCase();
+    const filtered = this.teams().filter(t =>
+      t.name.toLowerCase().includes(term)
+    );
+    const start = (this.currentPage - 1) * this.pageSize;
+    return filtered.slice(start, start + this.pageSize);
   }
 
-  pageItems(): Team[] {
-    const start = (this.page - 1) * this.pageSize;
-    return this.teams.slice(start, start + this.pageSize);
+  prevPage() {
+    if (this.currentPage > 1) this.currentPage--;
   }
 
-  prevPage() { if (this.page > 1) this.page--; }
-  nextPage() { if (this.page < this.totalPages) this.page++; }
+  nextPage() {
+    if (this.currentPage < this.totalPages) this.currentPage++;
+  }
 
-  imagePath(filename: string): string {
-    return filename.startsWith('assets/') ? filename : 'assets/images/teams/' + filename;
+  imagePath(path: string): string {
+    return path || 'assets/images/teams/placeholder.png';
   }
 
   onImageError(event: Event) {
     const img = event.target as HTMLImageElement;
+    if (img.dataset['fallbackSet'] === 'true') return;
     img.src = 'assets/images/teams/placeholder.png';
+    img.dataset['fallbackSet'] = 'true';
   }
 }

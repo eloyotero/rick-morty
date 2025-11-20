@@ -1,38 +1,33 @@
-<section class="characters-page">
-  <header class="section-header">
-    <h2>Personajes</h2>
-  </header>
+<section class="list-page">
+  <h1>Personajes</h1>
 
-  <div class="characters-grid">
-    <article class="card" *ngFor="let ch of characters; trackBy: trackById">
-      <div class="card-media">
+  <!-- Buscador -->
+  <input
+    type="text"
+    [(ngModel)]="searchTerm"
+    placeholder="Buscar personaje..."
+    class="search-box"
+  />
+
+  <!-- Lista paginada -->
+  <ul>
+    <li *ngFor="let ch of filteredCharacters()">
+      <a [routerLink]="['/characters', ch.id]" [queryParams]="{ page: currentPage }">
         <img
           [src]="imagePath(ch.image)"
-          [alt]="ch.name"
           (error)="onImageError($event)"
+          alt="{{ ch.name }}"
           loading="lazy"
         />
-      </div>
+        <span>{{ ch.name }}</span>
+      </a>
+    </li>
+  </ul>
 
-      <div class="card-body">
-        <h3 class="card-title">{{ ch.name }}</h3>
-
-        <ul class="meta-list">
-          <li><strong>Estado:</strong> {{ ch.status || 'Unknown' }}</li>
-          <li><strong>Especie:</strong> {{ ch.species || 'Unknown' }}</li>
-          <li><strong>Género:</strong> {{ ch.gender || 'Unknown' }}</li>
-          <li><strong>Origen:</strong> {{ ch.origin || 'Unknown' }}</li>
-          <li *ngIf="ch.episode"><strong>Episodios:</strong> {{ (ch.episode?.length ?? (ch.episode ? 1 : 0)) }}</li>
-        </ul>
-
-        <div class="card-actions">
-          <button class="btn-primary" (click)="goToDetail(ch.id)">Ver detalle</button>
-        </div>
-      </div>
-    </article>
-  </div>
-
-  <div *ngIf="!loading && characters.length === 0" class="no-data">
-    No hay personajes cargados.
+  <!-- Paginación -->
+  <div class="pagination">
+    <button (click)="prevPage()" [disabled]="currentPage === 1">Anterior</button>
+    <span>Página {{ currentPage }} de {{ totalPages }}</span>
+    <button (click)="nextPage()" [disabled]="currentPage === totalPages">Siguiente</button>
   </div>
 </section>
