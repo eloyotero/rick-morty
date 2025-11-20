@@ -1,14 +1,7 @@
-// src/app/features/episodes/episodes.service.ts
+// src/app/features/episodes/services/episodes.service.ts
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-
-export interface Episode {
-  id: number;
-  name: string;
-  air_date: string;
-  episode: string;
-}
 
 @Injectable({ providedIn: 'root' })
 export class EpisodesService {
@@ -16,11 +9,11 @@ export class EpisodesService {
 
   constructor(private http: HttpClient) {}
 
-  getEpisodes(page = 1): Observable<{ results: Episode[] }> {
-    return this.http.get<{ results: Episode[] }>(`${this.apiUrl}?page=${page}`);
+  getAllEpisodes(): Observable<any> {
+    return this.http.get<any>(this.apiUrl);
   }
 
-  getEpisode(id: number): Observable<Episode> {
-    return this.http.get<Episode>(`${this.apiUrl}/${id}`);
+  getEpisode(id: number): Observable<any> {
+    return this.http.get<any>(`${this.apiUrl}/${id}`);
   }
 }

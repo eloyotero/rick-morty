@@ -21,18 +21,19 @@ export const routes: Routes = [
   },
 
   // Episodes
+  // src/app/app.routes.ts
   {
     path: 'episodes',
     loadComponent: () =>
-      import(
-        './features/episodes/pages/episodes-list/episodes-list.component'
-      ).then((m) => m.EpisodesListComponent),
+      import('./features/episodes/episodes-list/episodes-list.component').then(
+        (m) => m.EpisodesListComponent
+      ),
   },
   {
     path: 'episodes/:id',
     loadComponent: () =>
       import(
-        './features/episodes/pages/episode-detail/episode-detail.component'
+        './features/episodes/episode-detail/episode-detail.component'
       ).then((m) => m.EpisodeDetailComponent),
   },
 
@@ -52,18 +53,18 @@ export const routes: Routes = [
       ).then((m) => m.LocationDetailComponent),
   },
 
-  // Teams
+  // Teams (ojo: carpeta es singular "team")
   {
     path: 'teams',
     loadComponent: () =>
-      import('./features/teams/pages/teams-list/teams-list.component').then(
+      import('./features/team/pages/team-list/team-list.component').then(
         (m) => m.TeamsListComponent
       ),
   },
   {
     path: 'teams/:id',
     loadComponent: () =>
-      import('./features/teams/team-detail/team-detail.component').then(
+      import('./features/team/pages/team-detail/team-detail.component').then(
         (m) => m.TeamDetailComponent
       ),
   },

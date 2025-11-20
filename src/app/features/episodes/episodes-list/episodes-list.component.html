@@ -1,20 +1,33 @@
 <!-- src/app/features/episodes/pages/episodes-list/episodes-list.component.html -->
 <section class="episodes-page">
   <header class="section-header">
-    <h2>Episodios</h2>
+    <h2>Episodes</h2>
   </header>
 
-  <div *ngIf="loading" class="loader"></div>
+  <div *ngIf="loading" class="loader">Cargando episodios…</div>
 
   <div class="episodes-grid" *ngIf="!loading">
     <a
       class="episode-card"
-      *ngFor="let e of episodes"
-      [routerLink]="['/episodes', e.id]"
+      *ngFor="let ep of episodes"
+      [routerLink]="['/episodes', ep.id]"
     >
-      <h3>{{ e.name }}</h3>
-      <p><strong>Fecha:</strong> {{ e.air_date }}</p>
-      <p><strong>Código:</strong> {{ e.episode }}</p>
+      <img
+        src="assets/images/episode-placeholder.jpg"
+        alt="Imagen del episodio {{ ep.name }}"
+        class="episode-image"
+      />
+
+      <div class="episode-content">
+        <h3 class="episode-title">{{ ep.name }}</h3>
+        <p class="episode-meta"><strong>Fecha:</strong> {{ ep.air_date }}</p>
+        <p class="episode-meta"><strong>Código:</strong> {{ ep.episode }}</p>
+        <button class="episode-btn" type="button">Ver detalle</button>
+      </div>
     </a>
+  </div>
+
+  <div class="empty" *ngIf="!loading && episodes.length === 0">
+    No hay episodios para mostrar.
   </div>
 </section>

@@ -1,15 +1,14 @@
 // src/app/features/episodes/pages/episodes-list/episodes-list.component.ts
 import { Component, OnInit } from '@angular/core';
-import { CommonModule } from '@angular/common';
-import { RouterLink } from '@angular/router';
-import { EpisodesService, Episode } from '../episodes.service';
+import { EpisodesService } from '../../services/episodes.service';
+import { Episode } from '../../models/episode.model';
 
 @Component({
   selector: 'app-episodes-list',
   standalone: true,
-  imports: [CommonModule, RouterLink],
   templateUrl: './episodes-list.component.html',
   styleUrls: ['./episodes-list.component.scss'],
+  imports: [],
 })
 export class EpisodesListComponent implements OnInit {
   episodes: Episode[] = [];
@@ -18,7 +17,7 @@ export class EpisodesListComponent implements OnInit {
   constructor(private episodesService: EpisodesService) {}
 
   ngOnInit(): void {
-    this.episodesService.getEpisodes().subscribe({
+    this.episodesService.getAllEpisodes().subscribe({
       next: (data) => {
         this.episodes = data.results;
         this.loading = false;

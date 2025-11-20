@@ -1,17 +1,16 @@
-<!-- src/app/app.component.html -->
-<header class="custom-header">
-  <h1>Rick & Morty App</h1>
-  <nav>
+<header class="main-header">
+  <nav class="navbar">
     <a routerLink="/characters" routerLinkActive="active">Characters</a>
     <a routerLink="/episodes" routerLinkActive="active">Episodes</a>
     <a routerLink="/locations" routerLinkActive="active">Locations</a>
+    <a routerLink="/teams" routerLinkActive="active">Teams</a>
   </nav>
 </header>
 
-<main>
+<main class="main-content">
   <router-outlet></router-outlet>
 </main>
 
-<footer class="custom-footer">
-  <p>© 2025 Rick & Morty Fan Project</p>
+<footer class="main-footer">
+  <p>Rick & Morty Angular App © 2025</p>
 </footer>
